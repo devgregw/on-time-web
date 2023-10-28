@@ -7,16 +7,14 @@
     --accent: #023B90;
 }
 
+/* Serif font for headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'DM Serif Display', serif;
 }
 
+/* Don't want to apply the serif font in the "Live Traffic" badge */
 h2 span.badge {
     font-family: var(--bs-body-font-family);
-}
-
-.text-accent {
-    /* color: var(--accent); */
 }
 
 .dallas {
@@ -27,23 +25,6 @@ h2 span.badge {
     margin: 5rem 0;
 }
 
-/* rtl:begin:remove */
-.featurette-heading {
-    letter-spacing: -.05rem;
-}
-
 .featurette-image {
     object-fit: cover;
-}
-
-@media (min-width: 40em) {
-    .featurette-heading {
-        font-size: 50px;
-    }
-}
-
-@media (min-width: 62em) {
-    .featurette-heading {
-        margin-top: 7rem;
-    }
 }
