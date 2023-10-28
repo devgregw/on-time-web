@@ -90,7 +90,7 @@
 
     <main class="container">
         <div class="mt-5">
-            <h2 class="mb-2">Email Addresses</h2>
+            <h2 class="mb-3">Email Addresses</h2>
             <div class="row">
                 <div class="col">
                     <table class="table table-striped border">
@@ -180,8 +180,50 @@
                     </table>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-6">
+            
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h2 class="fw-normal mt-5 mb-3">Send Us a Message</h2>
+                    <form action="https://www.ontimecouriers.com/contact.aspx" method="post" onkeypress="return event.keyCode != 13;">
+                        <div class="form-floating mb-3">
+                            <input name="name" required size="30" maxlength="150" type="text" class="form-control" id="name"
+                                placeholder="Name">
+                            <label for="name">Name*</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input name="company" size="30" maxlength="150" type="text" class="form-control" id="company"
+                                placeholder="Company">
+                            <label for="company">Company</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input name="phone" size="30" maxlength="150" type="tel" class="form-control" id="phone" placeholder="Phone">
+                            <label for="phone">Phone</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input name="email" required size="30" maxlength="150" type="email" class="form-control" id="email"
+                                placeholder="Email">
+                            <label for="email">Email*</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea name="comments" class="form-control" placeholder="Comments" id="comments"
+                                style="height: 100px"></textarea>
+                            <label for="comments">Comments</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input name="chrono_verification" required size="5" maxlength="5" type="text" class="form-control" id="chrono_verification"
+                                placeholder="Enter the verification code">
+                            <label for="chrono_verification">Enter the verification code*</label>
+                            
+                        </div>
+                        <img src="data:image/png;base64,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"
+                            alt="" class="border rounded" style="visibility: visible; zoom: 1; opacity: 1;">
+                        <input type="hidden" name="2f85bdb145815c8c98344e7699d21b0e" value="1">
+                        <div class="mt-3" role="group">
+                            <button type="submit" name="input_submit_7" class="btn btn-success rounded-pill fs-5"><i class="bi bi-send"></i> Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-md-6">
                     <h2 class="fw-normal mt-5 mb-3">Location &amp; Hours</h2>
                     <p>
                         <strong>Our Address</strong><br>
@@ -192,8 +234,6 @@
                         Orders can be placed 24/7<br>
                         Office Open: M-F 7am to 6pm
                     </p>
-                </div>
-                <div class="col-6">
                     <h2 class="fw-normal mt-5 mb-3">Call Us 24/7</h2>
                     <a href="tel:+12147409999" class="icon-link gap-2" style="font-size: xx-large;">
                         <i class="bi bi-telephone-outbound"></i>
@@ -205,8 +245,8 @@
         </div>
         
         <div class="text-center">
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="row justify-content-center">
+                <div class="col-4">
                     <h2 class="fw-normal mt-5 mb-3">Courier Service</h2>
                     <form class="px-3" action="https://ontimeweb.net/wo/weborder/j_security_check" method="POST">
                         <input type="hidden" name="j_uri" value="OrderList.jsp">
@@ -233,7 +273,7 @@
                                 class="bi bi-person-add"></i>Create a new account</a>
                     </form>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="col-4">
                     <h2 class="fw-normal mt-5 mb-3">Process Service</h2>
                     <form class="px-3" action="http://www.pstprostatus.net/asp/pstloginvalid3.aspx" name="login" method="POST">
                         <!-- Pass us a valid color value here for the BACKGROUND color of the page and we'll render the results page with it -->
@@ -290,43 +330,6 @@
                                 class="bi bi-send-plus"></i> Place a new process
                             order</a>
                     </form>
-                </div>
-                <div class="order-first order-lg-last col-xs-12 col-lg-4 col-xl-6">
-                    <h2 class="fw-normal mt-5 mb-3">Location, Hours, &amp; More</h2>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-6 col-lg-12 col-xl-6">
-                                <p>
-                                    <strong>Our Address</strong><br>
-                                    <a>1700 Pacific Avenue, Suite 1040<br>Dallas, TX, 75201</a>
-                                </p>
-                                <p>
-                                    <strong>Hours of Operation</strong><br>
-                                    Orders can be placed 24/7<br>
-                                    Office Open: M-F 7am to 6pm
-                                </p>
-                                <!-- <a class="btn btn-primary rounded-pill mb-3" href="">Contact Us</a> -->
-                            </div>
-                            <div class="col-6 col-lg-12 col-xl-6">
-                                <div class="list-group" style="text-align: left;">
-                                    <a href="/on-time-web/contact" class="list-group-item list-group-item-action">
-                                        Contact Us <i style="float:right" class="bi bi-arrow-right-circle"></i>
-                                    </a>
-                                    <a href="https://www.ontimecouriers.com/about.aspx"
-                                        class="list-group-item list-group-item-action">
-                                        About Us <i style="float:right" class="bi bi-arrow-right-circle"></i>
-                                    </a>
-                                    <a href="#" class="list-group-item list-group-item-action">
-                                        Terms and Conditions <i style="float:right" class="bi bi-arrow-right-circle"></i>
-                                    </a>
-                                    <a href="https://dfwtraffic.dot.state.tx.us/its" target="_blank" rel="noopened noreferrer"
-                                        class="list-group-item list-group-item-action">
-                                        TxDOT Live Traffic <i style="float:right" class="bi bi-arrow-right-circle"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
