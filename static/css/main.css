@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
 :root {
-    --jumbotron-image: url('/static/img/max-fray-V6CQgi7Pgdc-unsplash.jpg');
+    --jumbotron-image: url('/on-time-web/static/img/max-fray-V6CQgi7Pgdc-unsplash.jpg');
     --jumbotron-gradient: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
     --accent: #023B90;
 }
