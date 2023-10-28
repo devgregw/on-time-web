@@ -1,0 +1,49 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+:root {
+    --jumbotron-image: url('/static/img/max-fray-V6CQgi7Pgdc-unsplash.jpg');
+    --jumbotron-gradient: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    --accent: #023B90;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', serif;
+}
+
+h2 span.badge {
+    font-family: var(--bs-body-font-family);
+}
+
+.text-accent {
+    /* color: var(--accent); */
+}
+
+.dallas {
+    background: var(--jumbotron-gradient), top center / cover no-repeat var(--jumbotron-image);
+}
+
+.featurette-divider {
+    margin: 5rem 0;
+}
+
+/* rtl:begin:remove */
+.featurette-heading {
+    letter-spacing: -.05rem;
+}
+
+.featurette-image {
+    object-fit: cover;
+}
+
+@media (min-width: 40em) {
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
