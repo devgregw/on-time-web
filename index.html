@@ -89,10 +89,54 @@
                     </li>
                     <li><a class="dropdown-item" href="https://secure.ontimecouriers.com/QuickPay.aspx">Card</a>
                     </li>
-                    <li><a class="dropdown-item" href="#">PayPal</a></li>
-                    <li><a class="dropdown-item" href="#">Venmo</a></li>
+                    <li>
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#paypalModal">PayPal</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#zelleModal">Zelle</a>
+                    </li>
                 </ul>
                 <small class="text-light">Card, PayPal, &amp; More</small>
+                <div class="modal fade" id="paypalModal" tabindex="-1" aria-labelledby="paypalModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="paypalModalLabel">Pay with PayPal</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                To pay your invoice with PayPal, send your payment to <b>office@ontimecouriers.com</b>.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="window.open('https://www.paypal.com/myaccount/transfer/homepage', '_blank', 'noopener,noreferrer'); return false" data-bs-dismiss="modal" class="btn btn-primary">
+                                    Go to PayPal <i class="bi bi-arrow-up-right-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="zelleModal" tabindex="-1" aria-labelledby="zelleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="zelleModalLabel">Pay with Zelle</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                To pay your invoice with Zelle, send your payment to <b>office@ontimecouriers.com</b> using your bank's app or website.
+                                If your bank does not offer Zelle, try using the Zelle app.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" onclick="window.open('https://www.zellepay.com/how-it-works', '_blank', 'noopener,noreferrer'); return false" data-bs-dismiss="modal" class="btn btn-secondary">
+                                    Learn more <i class="bi bi-arrow-up-right-circle"></i>
+                                </button>
+                                <button type="button" onclick="window.open('https://www.zellepay.com/get-started', '_blank', 'noopener,noreferrer'); return false" data-bs-dismiss="modal" class="btn btn-primary">
+                                    Find your bank <i class="bi bi-arrow-up-right-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
