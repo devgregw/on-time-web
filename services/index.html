@@ -13,8 +13,27 @@
     <link rel="stylesheet" href="/on-time-web/static/css/main.css">
 
     <title>
-        On Time Couriers - Process Service - DFW - Houston - Austin - San Antonio
+        About Us - On Time Couriers
     </title>
+
+    <style>
+        ul.services li {
+            position: relative;
+            list-style: none;
+            margin-top: 0.25rem;
+        }
+        ul.services li::before {
+            background-image: url('https://icons.getbootstrap.com/assets/icons/chevron-right.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: -20px;
+            width: 16px;
+            height: 16px;
+        }
+    </style>
 </head>
 
 <body class="pb-5">
@@ -30,13 +49,13 @@
             <div class="collapse navbar-collapse text-center  d-lg-flex" id="navbarMain">
                 <ul class="navbar-nav nav-underline col-lg-8 justify-content-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/on-time-web/">Home</a>
+                        <a class="nav-link"  href="/on-time-web/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/on-time-web/about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/on-time-web/services">Services</a>
+                        <a class="nav-link active" aria-current="page" href="/on-time-web/services">Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/on-time-web/testimonials">Testimonials</a>
@@ -45,29 +64,44 @@
                         <a class="nav-link" href="/on-time-web/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.ontimecouriers.com/dis.aspx">Disclaimers</a>
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#disclaimers">Disclaimers</a>
                     </li>
                 </ul>
+                <div class="modal fade" id="disclaimers" tabindex="-1" aria-labelledby="disclaimerModal" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-3" id="disclaimerModal">Disclaimers</h1>
+                                <img style="height:3rem;width:auto" src="/on-time-web/static/img/s5_logo.png" />
+                            </div>
+                            <div class="modal-body" style="text-align: start">
+                                The liability of On-Time Couriers, Inc. and its contractors (collectively “OTC”) is limited to $100.00 for lost,
+                                delayed, or damaged items. If, at the time of booking the delivery, the customer declares, to OTC, that the items
+                                tendered to OTC for that delivery have a higher replacement value than $100, then OTC's liability shall, for that
+                                delivery, be increased to the declared replacement value or $1,000.00, whichever is less. The customer may, for any
+                                delivery and through a written agreement with additional payment, arrange for liability greater than $1,000.00. Any
+                                claim for loss, delay, or damage, must be reported to <a href="mailto:office@ontimecouriers.com">office@ontimecouriers.com</a>
+                                within 24 hours of the actual delivery time.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
     <div class="p-5 text-center dallas">
-        <h1 class="text-white">Welcome to Dallas' Oldest Courier Service!</h1>
+        <h1 class="text-white">Services</h1>
         <p class="text-light mt-5">
-            For over 50 years, we have provided the highest level of service to our
-            valued customers in the Dallas/Ft. Worth metroplex, and now in Houston, Austin and San Antonio!
-            Whether you are sending documents or drawings, envelopes or boxes, across town or around the corner, you
-            can depend on
-            our fast, reliable service. Family owned and operated since 1951, On Time Couriers is rated as one of
-            the top five
-            courier services by the Dallas Business Journal.
+            Whether you are sending documents or drawings, envelopes or boxes, across town or around the corner, you can depend on
+            our fast, reliable and courteous service.
         </p>
-        <hr class="text-white my-4" />
+        <hr class="text-white my-4">
         <p class="text-light">
-            Are you currently using another courier service? Let us show you a more effective solution. Feel free to
-            contact us or
-            create an account today!
+            We handle the delivery of all packages in the DFW metroplex and most U.S. Cities.
         </p>
         <div class="d-inline-flex mt-3 gap-4 justify-content-center">
             <div class="align-items-center" style="flex:1 0 50%;">
@@ -97,40 +131,52 @@
                     </li>
                 </ul>
                 <small class="text-light">Card, PayPal, &amp; More</small>
-                <div class="modal fade" id="paypalModal" tabindex="-1" aria-labelledby="paypalModalLabel" aria-hidden="true">
+                <div class="modal fade" id="paypalModal" tabindex="-1" aria-labelledby="paypalModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="paypalModalLabel">Pay with PayPal</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 To pay your invoice with PayPal, send your payment to <b>office@ontimecouriers.com</b>.
                             </div>
                             <div class="modal-footer">
-                                <button type="button" onclick="window.open('https://www.paypal.com/myaccount/transfer/homepage', '_blank', 'noopener,noreferrer'); return false" data-bs-dismiss="modal" class="btn btn-primary">
+                                <button type="button"
+                                    onclick="window.open('https://www.paypal.com/myaccount/transfer/homepage', '_blank', 'noopener,noreferrer'); return false"
+                                    data-bs-dismiss="modal" class="btn btn-primary">
                                     Go to PayPal <i class="bi bi-arrow-up-right-circle"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="zelleModal" tabindex="-1" aria-labelledby="zelleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="zelleModal" tabindex="-1" aria-labelledby="zelleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="zelleModalLabel">Pay with Zelle</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                To pay your invoice with Zelle, send your payment to <b>office@ontimecouriers.com</b> using your bank's app or website.
+                                To pay your invoice with Zelle, send your payment to <b>office@ontimecouriers.com</b>
+                                using your bank's
+                                app or website.
                                 If your bank does not offer Zelle, try using the Zelle app.
                             </div>
                             <div class="modal-footer">
-                                <button type="button" onclick="window.open('https://www.zellepay.com/how-it-works', '_blank', 'noopener,noreferrer'); return false" data-bs-dismiss="modal" class="btn btn-secondary">
+                                <button type="button"
+                                    onclick="window.open('https://www.zellepay.com/how-it-works', '_blank', 'noopener,noreferrer'); return false"
+                                    data-bs-dismiss="modal" class="btn btn-secondary">
                                     Learn more <i class="bi bi-arrow-up-right-circle"></i>
                                 </button>
-                                <button type="button" onclick="window.open('https://www.zellepay.com/get-started', '_blank', 'noopener,noreferrer'); return false" data-bs-dismiss="modal" class="btn btn-primary">
+                                <button type="button"
+                                    onclick="window.open('https://www.zellepay.com/get-started', '_blank', 'noopener,noreferrer'); return false"
+                                    data-bs-dismiss="modal" class="btn btn-primary">
                                     Find your bank <i class="bi bi-arrow-up-right-circle"></i>
                                 </button>
                             </div>
@@ -142,6 +188,70 @@
     </div>
 
     <main class="container">
+        <div class="mt-5">
+            <div class="row">
+                <section class="mt-4 col-xs-12 col-md-6">
+                    <h2 class="mb-3 text-accent text-center">Courier</h2>
+                    <p>
+                    <ul class="services">
+                        <li>Immediate Service within 45 minutes</li>
+                        <li>Direct 30 minute service in the immediate downtown area</li>
+                        <li>1 hour, 2 hour and 3 hour delivery services</li>
+                        <li>Complete courthouse work (including research, filings, setting of hearings and court dates)</li>
+                        <li>Document retrieval</li>
+                        <li>Notary service</li>
+                    </ul>
+                    </p>
+                </section>
+                
+                <section class="mt-4 col-xs-12 col-md-6">
+                    <h2 class="mb-3 text-accent text-center">Process</h2>
+                    <p>
+                    <ul class="services">
+                        <li>Witness locating/tracing available</li>
+                        <li>Investigations</li>
+                        <li>Surveilance</li>
+                        <li>Court house walk through</li>
+                        <li>Temporary Restraining Order (TRO) walk through</li>
+                        <li>NATIONWIDE service</li>
+                        <li>Direct Process Service (1-2 hours) ***</li>
+                        <li>Same Day Service</li>
+                        <li>36 hour Service</li>
+                        <li>Standard Service (First attempt 3-4 days)</li>
+                    </ul>
+                    <em>***not available in all areas. Call to verify.</em>
+                    </p>
+                </section>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row">
+                    <section class="mt-4 col-xs-12 col-md-6">
+                        <h2 class="mb-3 text-accent text-center">Online Services</h2>
+                        <p>
+                            <ul class="services">
+                                <li>Web order entry allows you to enter orders online</li>
+                                <li>Complete online access 24 hours a day</li>
+                                <li>Online accounting (including payment history, aging and invoices)</li>
+                                <li>Email confirmations on all deliveries (notified of the time of pick up and or drop off with recipient's names
+                                instantly). Up to 4 emails per delivery allows you to notify the recipient, boss, employee or anyone that might have an
+                                interest in the delivery.</li>
+                            </ul>
+                        </p>
+                    </section>
+                    <section class="mt-4 col-xs-12 col-md-6">
+                        <h2 class="mb-3 text-accent text-center">Additional Value-Added Services</h2>
+                        <p>
+                            <ul class="services">
+                                <li>Client Matter, Reference, Job Number or GF number reconciliation</li>
+                                <li>Receive copies of invoices instantly via email or fax</li>
+                                <li>Print your own tickets or use our pre-printed tickets</li>
+                            </ul>
+                        </p>
+                    </section>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+
         <div class="text-center">
             <div class="row">
                 <div class="col-md-6 col-lg-4 col-xl-3">
@@ -154,17 +264,18 @@
                             <label for="courierAcctNo">Account number</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input name="caller" size="25" maxlength="45" type="text" class="form-control" id="courierName"
-                                placeholder="Name">
+                            <input name="caller" size="25" maxlength="45" type="text" class="form-control"
+                                id="courierName" placeholder="Name">
                             <label for="courierName">Name</label>
                         </div>
                         <div class="form-floating">
-                            <input name="j_password" size="25" maxlength="45" type="password" class="form-control" id="password"
-                                placeholder="Password">
+                            <input name="j_password" size="25" maxlength="45" type="password" class="form-control"
+                                id="password" placeholder="Password">
                             <label for="password">Password</label>
                         </div>
                         <div class="mt-3" role="group">
-                            <button type="submit" class="btn btn-success rounded-pill fs-5"><i class="bi bi-key"></i> Log
+                            <button type="submit" class="btn btn-success rounded-pill fs-5"><i class="bi bi-key"></i>
+                                Log
                                 in</button>
                         </div>
                         <a class="icon-link fs-5 mt-2" href="https://www.ontimecouriers.com/new-account.aspx"><i
@@ -173,7 +284,8 @@
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3">
                     <h2 class="fw-normal mt-5 mb-3">Process Service</h2>
-                    <form class="px-3" action="http://www.pstprostatus.net/asp/pstloginvalid3.aspx" name="login" method="POST">
+                    <form class="px-3" action="http://www.pstprostatus.net/asp/pstloginvalid3.aspx" name="login"
+                        method="POST">
                         <!-- Pass us a valid color value here for the BACKGROUND color of the page and we'll render the results page with it -->
                         <input type="hidden" name="bgcolor" value="White">
                         <!-- Pass us a valid URL of a background image and we'll render the results page with it -->
@@ -211,13 +323,13 @@
                             Make sure you include the single quotes and commas. -->
                         <input type="hidden" name="Sample2_DBSCode" value="'dba','dbb','dbc'">
                         <div class="form-floating mb-3">
-                            <input name="account" size="25" maxlength="45" type="text" class="form-control" id="processAccount"
-                                placeholder="Username">
+                            <input name="account" size="25" maxlength="45" type="text" class="form-control"
+                                id="processAccount" placeholder="Username">
                             <label for="processAccount">Username</label>
                         </div>
                         <div class="form-floating">
-                            <input name="password" size="25" maxlength="45" type="password" class="form-control" id="password"
-                                placeholder="Password">
+                            <input name="password" size="25" maxlength="45" type="password" class="form-control"
+                                id="password" placeholder="Password">
                             <label for="password">Password</label>
                         </div>
                         <div class="mt-3" role="group">
@@ -250,14 +362,16 @@
                                     <a href="/on-time-web/contact" class="list-group-item list-group-item-action">
                                         Contact Us <i style="float:right" class="bi bi-arrow-right-circle"></i>
                                     </a>
-                                    <a href="/on-time-web/about" class="list-group-item list-group-item-action">
+                                    <a href="/on-time-web/about"
+                                        class="list-group-item list-group-item-action">
                                         About Us <i style="float:right" class="bi bi-arrow-right-circle"></i>
                                     </a>
-                                    <a href="#" class="list-group-item list-group-item-action">
-                                        Terms and Conditions <i style="float:right" class="bi bi-arrow-right-circle"></i>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimers" class="list-group-item list-group-item-action">
+                                        Terms and Conditions <i style="float:right"
+                                            class="bi bi-arrow-right-circle"></i>
                                     </a>
-                                    <a href="https://dfwtraffic.dot.state.tx.us/its" target="_blank" rel="noopener noreferrer"
-                                        class="list-group-item list-group-item-action">
+                                    <a href="https://dfwtraffic.dot.state.tx.us/its" target="_blank"
+                                        rel="noopened noreferrer" class="list-group-item list-group-item-action">
                                         TxDOT Live Traffic <i style="float:right" class="bi bi-arrow-right-circle"></i>
                                     </a>
                                 </div>
@@ -266,97 +380,8 @@
                     </div>
                 </div>
             </div>
-        
-        
-        
         </div>
-        
-        <div class="container-fluid">
-            <hr class="featurette-divider">
-            <div class="row mb-2">
-                <div class="col-lg-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative"
-                        style="min-height: 250px;">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <h3>Family-owned since 1951</h3>
-                            <p class="card-text mb-auto">
-                                Over the past 50 years, we have gained a solid reputation as the "Fastest Courier Service in
-                                Dallas."
-                            </p>
-                            <a href="/on-time-web/about" class="icon-link gap-1 icon-link-hover">
-                                About us
-                                <i class="bi bi-arrow-right-circle"></i>
-                            </a>
-                        </div>
-                        <div class="col-auto d-none d-sm-block flex-column">
-                            <img class="object-fit-cover" style="width:200px;height:100%;" src="/on-time-web/static/img/feature-1.jpg">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative"
-                        style="min-height: 250px;">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <h3>All day, every day</h3>
-                            <p class="card-text mb-auto">
-                                Today, the Dallas Business Journal ranks us as one of the top five local courier services in
-                                Dallas and Fort Worth, plus
-                                we now provide the same On Time 24/7 service in the Houston, Austin and San Antonio markets.
-                            </p>
-                            <a href="/on-time-web/contact" class="icon-link gap-1 icon-link-hover">
-                                Contact us
-                                <i class="bi bi-arrow-right-circle"></i>
-                            </a>
-                        </div>
-                        <div class="col-auto d-none d-sm-block flex-column">
-                            <img class="object-fit-cover" style="width:200px;height:100%;" src="/on-time-web/static/img/feature-4b.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-lg-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative"
-                        style="min-height: 250px;">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <h3>Process, courthouse, and record retrieval services</h3>
-                            <p class="card-text mb-auto">
-                                Whether you are sending documents or drawings, envelopes or boxes, across town or around the
-                                corner, you can depend on
-                                our fast, reliable and courteous service.
-                            </p>
-                            <a href="/on-time-web/services" class="icon-link gap-1 icon-link-hover">
-                                Services
-                                <i class="bi bi-arrow-right-circle"></i>
-                            </a>
-                        </div>
-                        <div class="col-auto d-none d-sm-block flex-column">
-                            <img class="object-fit-cover" style="width:200px;height:100%;" src="/on-time-web/static/img/feature-3.jpg">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative"
-                        style="min-height: 250px;">
-                        <div class="col p-4 d-flex flex-column position-static">
-                            <h3>Where the customer is king</h3>
-                            <p class="card-text mb-auto">
-                                By doing everything we can to take exceptional care of our customers, we hope to keep you in
-                                our On Time Family.
-                            </p>
-                            <a href="/on-time-web/testimonials" class="icon-link gap-1 icon-link-hover">
-                                Testimonials
-                                <i class="bi bi-arrow-right-circle"></i>
-                            </a>
-                        </div>
-                        <div class="col-auto d-none d-sm-block flex-column">
-                            <img class="object-fit-cover" style="width:200px;height:100%;" src="/on-time-web/static/img/feature-4.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+
         <div class="text-center">
             <hr class="featurette-divider">
             <h2 class="fw-normal mt-5 mb-3">Dallas-Fort Worth <span class="badge text-bg-info">Live Traffic</span></h2>
@@ -364,13 +389,15 @@
                 <div class="col">
                     <div class="ratio d-none d-lg-block ratio-21x9">
                         <iframe class="border rounded shadow"
-                            src="https://embed.waze.com/iframe?zoom=10&lat=32.763&lon=-97.0326&ct=livemap" style="border:0;"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            src="https://embed.waze.com/iframe?zoom=10&lat=32.763&lon=-97.0326&ct=livemap"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="ratio d-block d-lg-none ratio-1x1">
                         <iframe class="border rounded shadow"
-                            src="https://embed.waze.com/iframe?zoom=10&lat=32.763&lon=-97.0326&ct=livemap" style="border:0;"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            src="https://embed.waze.com/iframe?zoom=10&lat=32.763&lon=-97.0326&ct=livemap"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
