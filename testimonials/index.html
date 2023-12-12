@@ -45,9 +45,31 @@
                         <a class="nav-link" href="/on-time-web/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.ontimecouriers.com/dis.aspx">Disclaimers</a>
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#disclaimers">Disclaimers</a>
                     </li>
                 </ul>
+                <div class="modal fade" id="disclaimers" tabindex="-1" aria-labelledby="disclaimerModal" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-3" id="disclaimerModal">Disclaimers</h1>
+                                <img style="height:3rem;width:auto" src="/on-time-web/static/img/s5_logo.png" />
+                            </div>
+                            <div class="modal-body" style="text-align: start">
+                                The liability of On-Time Couriers, Inc. and its contractors (collectively “OTC”) is limited to $100.00 for lost,
+                                delayed, or damaged items. If, at the time of booking the delivery, the customer declares, to OTC, that the items
+                                tendered to OTC for that delivery have a higher replacement value than $100, then OTC's liability shall, for that
+                                delivery, be increased to the declared replacement value or $1,000.00, whichever is less. The customer may, for any
+                                delivery and through a written agreement with additional payment, arrange for liability greater than $1,000.00. Any
+                                claim for loss, delay, or damage, must be reported to <a href="mailto:office@ontimecouriers.com">office@ontimecouriers.com</a>
+                                within 24 hours of the actual delivery time.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -305,7 +327,7 @@
                                         class="list-group-item list-group-item-action">
                                         About Us <i style="float:right" class="bi bi-arrow-right-circle"></i>
                                     </a>
-                                    <a href="#" class="list-group-item list-group-item-action">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimers" class="list-group-item list-group-item-action">
                                         Terms and Conditions <i style="float:right"
                                             class="bi bi-arrow-right-circle"></i>
                                     </a>
