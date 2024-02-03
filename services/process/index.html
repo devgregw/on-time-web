@@ -13,8 +13,28 @@
     <link rel="stylesheet" href="/on-time-web/static/css/main.css">
 
     <title>
-        About Us - On Time Couriers
+        Process Services - On Time Couriers
     </title>
+
+    <style>
+        ul.services li {
+            position: relative;
+            list-style: none;
+            margin-top: 0.25rem;
+        }
+
+        ul.services li::before {
+            background-image: url('https://icons.getbootstrap.com/assets/icons/chevron-right.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: -20px;
+            width: 16px;
+            height: 16px;
+        }
+    </style>
 </head>
 
 <body class="pb-5">
@@ -30,16 +50,16 @@
             <div class="collapse navbar-collapse text-center  d-lg-flex" id="navbarMain">
                 <ul class="navbar-nav nav-underline col-lg-8 justify-content-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/on-time-web/">Home</a>
+                        <a class="nav-link" href="/on-time-web/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/on-time-web/about">About Us</a>
+                        <a class="nav-link" href="/on-time-web/about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/on-time-web/services/courier">Courier Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/on-time-web/services/process">Process Services</a>
+                        <a class="nav-link active" aria-current="page" href="/on-time-web/services/process">Process Services</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="/on-time-web/testimonials">Testimonials</a>
@@ -48,10 +68,12 @@
                         <a class="nav-link" href="/on-time-web/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#disclaimers">Disclaimers</a>
+                        <a class="nav-link" href="#" data-bs-toggle="modal"
+                            data-bs-target="#disclaimers">Disclaimers</a>
                     </li>
                 </ul>
-                <div class="modal fade" id="disclaimers" tabindex="-1" aria-labelledby="disclaimerModal" aria-hidden="true">
+                <div class="modal fade" id="disclaimers" tabindex="-1" aria-labelledby="disclaimerModal"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -59,12 +81,18 @@
                                 <img style="height:3rem;width:auto" src="/on-time-web/static/img/s5_logo.png" />
                             </div>
                             <div class="modal-body" style="text-align: start">
-                                The liability of On-Time Couriers, Inc. and its contractors (collectively “OTC”) is limited to $100.00 for lost,
-                                delayed, or damaged items. If, at the time of booking the delivery, the customer declares, to OTC, that the items
-                                tendered to OTC for that delivery have a higher replacement value than $100, then OTC's liability shall, for that
-                                delivery, be increased to the declared replacement value or $1,000.00, whichever is less. The customer may, for any
-                                delivery and through a written agreement with additional payment, arrange for liability greater than $1,000.00. Any
-                                claim for loss, delay, or damage, must be reported to <a href="mailto:office@ontimecouriers.com">office@ontimecouriers.com</a>
+                                The liability of On-Time Couriers, Inc. and its contractors (collectively “OTC”) is
+                                limited to $100.00 for lost,
+                                delayed, or damaged items. If, at the time of booking the delivery, the customer
+                                declares, to OTC, that the items
+                                tendered to OTC for that delivery have a higher replacement value than $100, then OTC's
+                                liability shall, for that
+                                delivery, be increased to the declared replacement value or $1,000.00, whichever is
+                                less. The customer may, for any
+                                delivery and through a written agreement with additional payment, arrange for liability
+                                greater than $1,000.00. Any
+                                claim for loss, delay, or damage, must be reported to <a
+                                    href="mailto:office@ontimecouriers.com">office@ontimecouriers.com</a>
                                 within 24 hours of the actual delivery time.
                             </div>
                             <div class="modal-footer">
@@ -78,13 +106,16 @@
     </nav>
 
     <div class="p-5 text-center dallas">
-        <h1 class="text-white">About Us</h1>
+        <h1 class="text-white">Process Services</h1>
         <p class="text-light mt-5">
-            Over the past 50 years, we have gained a solid reputation as the "Fastest Courier Service in Dallas." In addition to our
-            speedy service, we take great pride in delivering exceptional customer service. It is this level of quality that keeps
-            our customers coming back to us for their delivery needs again and again.
+            Whether you are sending documents or drawings, envelopes or boxes, across town or around the corner, you can
+            depend on
+            our fast, reliable and courteous service.
         </p>
         <hr class="text-white my-4">
+        <p class="text-light">
+            We handle the delivery of all packages in the DFW metroplex and most U.S. Cities.
+        </p>
         <div class="d-inline-flex mt-3 gap-4 justify-content-center">
             <div class="align-items-center" style="flex:1 0 50%;">
                 <a href="tel:+12147409999" class="d-block btn btn-primary btn-lg px-4 rounded-pill" style="width:100%">
@@ -113,20 +144,24 @@
                     </li>
                 </ul>
                 <small class="text-light">Card, PayPal, &amp; More</small>
-                <div class="modal fade" id="paypalModal" tabindex="-1" aria-labelledby="paypalModalLabel" aria-hidden="true">
+                <div class="modal fade" id="paypalModal" tabindex="-1" aria-labelledby="paypalModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="paypalModalLabel">Pay with PayPal</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="container-fluid px-4">
                                     <div class="row">
-                                        <div class="col"><img style="width:10rem;height:auto;" src="/on-time-web/static/img/paypal.jpg">
+                                        <div class="col"><img style="width:10rem;height:auto;"
+                                                src="/on-time-web/static/img/paypal.jpg">
                                         </div>
                                         <div class="col my-auto">To pay your invoice with PayPal, send your payment to
-                                            <b>office@ontimecouriers.com</b> or scan the QR code with the PayPal app.</div>
+                                            <b>office@ontimecouriers.com</b> or scan the QR code with the PayPal app.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -140,15 +175,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="zelleModal" tabindex="-1" aria-labelledby="zelleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="zelleModal" tabindex="-1" aria-labelledby="zelleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="zelleModalLabel">Pay with Zelle</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                To pay your invoice with Zelle, send your payment to <b>office@ontimecouriers.com</b> using your bank's
+                                To pay your invoice with Zelle, send your payment to <b>office@ontimecouriers.com</b>
+                                using your bank's
                                 app or website.
                                 If your bank does not offer Zelle, try using the Zelle app.
                             </div>
@@ -174,71 +212,28 @@
     <main class="container">
         <div class="mt-5">
             <div class="row">
-                <div class="col">
-                    <section>
-                        <h2 class="mb-3 text-accent">Family-Owned Since 1951</h2>
-                        <p>
-                            On Time Couriers essentially created the concept of local delivery service in Dallas/Ft. Worth. In
-                            1951, while
-                            working
-                            as a local cab driver, William E. Gumm was dispatched to pick up flowers from a florist and deliver
-                            them to
-                            Baylor
-                            Hospital. He immediately saw an opportunity to capitalize on an untapped market ... fast, reliable,
-                            and
-                            courteous
-                            delivery service to the Dallas area.
-                        </p>
-                        <p>
-                            Mr. Gumm's business originated out of his garage in Oak Cliff, and eventually moved to a downtown
-                            office in
-                            1954. By the
-                            late 1980's, his grandson took the knowledge that Mr. Gumm had taught him and began what is now
-                            known as the
-                            fastest
-                            courier service in Dallas, On Time Couriers.
-                        <p>
-                            To date, On Time is still operated by three of William E. Gumm's grandsons, along with several other
-                            extended
-                            members of
-                            the Gumm family.
-                        </p>
-                    </section>
-        
-                    <section>
-                        <h2 class="mt-4 mb-3 text-accent">Our Success Continues Today</h2>
-                        <p>
-                            Today, the Dallas Business Journal ranks us as one of the top five local courier services in
-                            <b>Dallas and Fort
-                                Worth</b>, plus
-                            we now provide the same On Time 24/7 service in the <b>Houston, Austin and San Antonio</b> markets.
-                        </p>
-                        <p>
-                            In the year 2000, one of On Time's dedicated team players saw the opportunity surrounding process
-                            service. Going
-                            out
-                            on
-                            a limb, he researched and absorbed all the knowledge that he could on his own in order to add
-                            another department
-                            to
-                            the
-                            company. By the end of 2001, he had trained a number of employees and had successfully implemented
-                            our new
-                            department
-                            known as On Time Process.
-                        </p>
-                        <p>
-                            Are you currently using another courier service? Let us show you a more effective solution. Please
-                            feel free to
-                            contact
-                            us or create an account today!
-                        </p>
-                    </section>
-                </div>
+                <section class="m-auto mt-4 col-xs-12 col-md-6">
+                    <h2 class="mb-3 text-accent text-center">Process Services</h2>
+                    <p>
+                    <ul class="services">
+                        <li>Witness locating/tracing available</li>
+                        <li>Investigations</li>
+                        <li>Surveilance</li>
+                        <li>Court house walk through</li>
+                        <li>Temporary Restraining Order (TRO) walk through</li>
+                        <li>NATIONWIDE service</li>
+                        <li>Direct Process Service (1-2 hours) ***</li>
+                        <li>Same Day Service</li>
+                        <li>36 hour Service</li>
+                        <li>Standard Service (First attempt 3-4 days)</li>
+                    </ul>
+                    <em>***not available in all areas. Call to verify.</em>
+                    </p>
+                </section>
             </div>
             <hr class="featurette-divider">
         </div>
-        
+
         <div class="text-center">
             <div class="row">
                 <div class="col-md-6 col-lg-4 col-xl-3">
@@ -251,17 +246,18 @@
                             <label for="courierAcctNo">Account number</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input name="caller" size="25" maxlength="45" type="text" class="form-control" id="courierName"
-                                placeholder="Name">
+                            <input name="caller" size="25" maxlength="45" type="text" class="form-control"
+                                id="courierName" placeholder="Name">
                             <label for="courierName">Name</label>
                         </div>
                         <div class="form-floating">
-                            <input name="j_password" size="25" maxlength="45" type="password" class="form-control" id="password"
-                                placeholder="Password">
+                            <input name="j_password" size="25" maxlength="45" type="password" class="form-control"
+                                id="password" placeholder="Password">
                             <label for="password">Password</label>
                         </div>
                         <div class="mt-3" role="group">
-                            <button type="submit" class="btn btn-success rounded-pill fs-5"><i class="bi bi-key"></i> Log
+                            <button type="submit" class="btn btn-success rounded-pill fs-5"><i class="bi bi-key"></i>
+                                Log
                                 in</button>
                         </div>
                         <a class="icon-link fs-5 mt-2" href="/on-time-web/create-account"><i
@@ -270,7 +266,8 @@
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3">
                     <h2 class="fw-normal mt-5 mb-3">Process Service</h2>
-                    <form class="px-3" action="https://www.pstprostatus.net/asp/pstloginvalid3.aspx" name="login" method="POST">
+                    <form class="px-3" action="https://www.pstprostatus.net/asp/pstloginvalid3.aspx" name="login"
+                        method="POST">
                         <!-- Pass us a valid color value here for the BACKGROUND color of the page and we'll render the results page with it -->
                         <input type="hidden" name="bgcolor" value="White">
                         <!-- Pass us a valid URL of a background image and we'll render the results page with it -->
@@ -308,13 +305,13 @@
                             Make sure you include the single quotes and commas. -->
                         <input type="hidden" name="Sample2_DBSCode" value="'dba','dbb','dbc'">
                         <div class="form-floating mb-3">
-                            <input name="account" size="25" maxlength="45" type="text" class="form-control" id="processAccount"
-                                placeholder="Username">
+                            <input name="account" size="25" maxlength="45" type="text" class="form-control"
+                                id="processAccount" placeholder="Username">
                             <label for="processAccount">Username</label>
                         </div>
                         <div class="form-floating">
-                            <input name="password" size="25" maxlength="45" type="password" class="form-control" id="password"
-                                placeholder="Password">
+                            <input name="password" size="25" maxlength="45" type="password" class="form-control"
+                                id="password" placeholder="Password">
                             <label for="password">Password</label>
                         </div>
                         <div class="mt-3" role="group">
@@ -347,11 +344,16 @@
                                     <a href="/on-time-web/contact" class="list-group-item list-group-item-action">
                                         Contact Us <i style="float:right" class="bi bi-arrow-right-circle"></i>
                                     </a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimers" class="list-group-item list-group-item-action">
-                                        Terms and Conditions <i style="float:right" class="bi bi-arrow-right-circle"></i>
+                                    <a href="/on-time-web/about" class="list-group-item list-group-item-action">
+                                        About Us <i style="float:right" class="bi bi-arrow-right-circle"></i>
                                     </a>
-                                    <a href="https://dfwtraffic.dot.state.tx.us/its" target="_blank" rel="noopened noreferrer"
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimers"
                                         class="list-group-item list-group-item-action">
+                                        Terms and Conditions <i style="float:right"
+                                            class="bi bi-arrow-right-circle"></i>
+                                    </a>
+                                    <a href="https://dfwtraffic.dot.state.tx.us/its" target="_blank"
+                                        rel="noopened noreferrer" class="list-group-item list-group-item-action">
                                         TxDOT Live Traffic <i style="float:right" class="bi bi-arrow-right-circle"></i>
                                     </a>
                                 </div>
@@ -361,7 +363,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="text-center">
             <hr class="featurette-divider">
             <h2 class="fw-normal mt-5 mb-3">Dallas-Fort Worth <span class="badge text-bg-info">Live Traffic</span></h2>
@@ -369,13 +371,15 @@
                 <div class="col">
                     <div class="ratio d-none d-lg-block ratio-21x9">
                         <iframe class="border rounded shadow"
-                            src="https://embed.waze.com/iframe?zoom=10&lat=32.763&lon=-97.0326&ct=livemap" style="border:0;"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            src="https://embed.waze.com/iframe?zoom=10&lat=32.763&lon=-97.0326&ct=livemap"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="ratio d-block d-lg-none ratio-1x1">
                         <iframe class="border rounded shadow"
-                            src="https://embed.waze.com/iframe?zoom=10&lat=32.763&lon=-97.0326&ct=livemap" style="border:0;"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            src="https://embed.waze.com/iframe?zoom=10&lat=32.763&lon=-97.0326&ct=livemap"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

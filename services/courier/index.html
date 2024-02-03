@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/on-time-web/static/css/main.css">
 
     <title>
-        About Us - On Time Couriers
+        Courier Services - On Time Couriers
     </title>
 
     <style>
@@ -22,6 +22,7 @@
             list-style: none;
             margin-top: 0.25rem;
         }
+
         ul.services li::before {
             background-image: url('https://icons.getbootstrap.com/assets/icons/chevron-right.svg');
             background-size: contain;
@@ -49,13 +50,16 @@
             <div class="collapse navbar-collapse text-center  d-lg-flex" id="navbarMain">
                 <ul class="navbar-nav nav-underline col-lg-8 justify-content-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link"  href="/on-time-web/">Home</a>
+                        <a class="nav-link" href="/on-time-web/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/on-time-web/about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/on-time-web/services">Services</a>
+                        <a class="nav-link active" aria-current="page" href="/on-time-web/services/courier">Courier Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/on-time-web/services/process">Process Services</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="/on-time-web/testimonials">Testimonials</a>
@@ -64,10 +68,12 @@
                         <a class="nav-link" href="/on-time-web/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#disclaimers">Disclaimers</a>
+                        <a class="nav-link" href="#" data-bs-toggle="modal"
+                            data-bs-target="#disclaimers">Disclaimers</a>
                     </li>
                 </ul>
-                <div class="modal fade" id="disclaimers" tabindex="-1" aria-labelledby="disclaimerModal" aria-hidden="true">
+                <div class="modal fade" id="disclaimers" tabindex="-1" aria-labelledby="disclaimerModal"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -75,12 +81,18 @@
                                 <img style="height:3rem;width:auto" src="/on-time-web/static/img/s5_logo.png" />
                             </div>
                             <div class="modal-body" style="text-align: start">
-                                The liability of On-Time Couriers, Inc. and its contractors (collectively “OTC”) is limited to $100.00 for lost,
-                                delayed, or damaged items. If, at the time of booking the delivery, the customer declares, to OTC, that the items
-                                tendered to OTC for that delivery have a higher replacement value than $100, then OTC's liability shall, for that
-                                delivery, be increased to the declared replacement value or $1,000.00, whichever is less. The customer may, for any
-                                delivery and through a written agreement with additional payment, arrange for liability greater than $1,000.00. Any
-                                claim for loss, delay, or damage, must be reported to <a href="mailto:office@ontimecouriers.com">office@ontimecouriers.com</a>
+                                The liability of On-Time Couriers, Inc. and its contractors (collectively “OTC”) is
+                                limited to $100.00 for lost,
+                                delayed, or damaged items. If, at the time of booking the delivery, the customer
+                                declares, to OTC, that the items
+                                tendered to OTC for that delivery have a higher replacement value than $100, then OTC's
+                                liability shall, for that
+                                delivery, be increased to the declared replacement value or $1,000.00, whichever is
+                                less. The customer may, for any
+                                delivery and through a written agreement with additional payment, arrange for liability
+                                greater than $1,000.00. Any
+                                claim for loss, delay, or damage, must be reported to <a
+                                    href="mailto:office@ontimecouriers.com">office@ontimecouriers.com</a>
                                 within 24 hours of the actual delivery time.
                             </div>
                             <div class="modal-footer">
@@ -94,9 +106,10 @@
     </nav>
 
     <div class="p-5 text-center dallas">
-        <h1 class="text-white">Services</h1>
+        <h1 class="text-white">Courier Services</h1>
         <p class="text-light mt-5">
-            Whether you are sending documents or drawings, envelopes or boxes, across town or around the corner, you can depend on
+            Whether you are sending documents or drawings, envelopes or boxes, across town or around the corner, you can
+            depend on
             our fast, reliable and courteous service.
         </p>
         <hr class="text-white my-4">
@@ -131,20 +144,24 @@
                     </li>
                 </ul>
                 <small class="text-light">Card, PayPal, &amp; More</small>
-                <div class="modal fade" id="paypalModal" tabindex="-1" aria-labelledby="paypalModalLabel" aria-hidden="true">
+                <div class="modal fade" id="paypalModal" tabindex="-1" aria-labelledby="paypalModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="paypalModalLabel">Pay with PayPal</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="container-fluid px-4">
                                     <div class="row">
-                                        <div class="col"><img style="width:10rem;height:auto;" src="/on-time-web/static/img/paypal.jpg">
+                                        <div class="col"><img style="width:10rem;height:auto;"
+                                                src="/on-time-web/static/img/paypal.jpg">
                                         </div>
                                         <div class="col my-auto">To pay your invoice with PayPal, send your payment to
-                                            <b>office@ontimecouriers.com</b> or scan the QR code with the PayPal app.</div>
+                                            <b>office@ontimecouriers.com</b> or scan the QR code with the PayPal app.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -196,63 +213,47 @@
         <div class="mt-5">
             <div class="row">
                 <section class="mt-4 col-xs-12 col-md-6">
-                    <h2 class="mb-3 text-accent text-center">Courier</h2>
+                    <h2 class="mb-3 text-accent text-center">Courier Services</h2>
                     <p>
                     <ul class="services">
                         <li>Immediate Service within 45 minutes</li>
                         <li>Direct 30 minute service in the immediate downtown area</li>
                         <li>1 hour, 2 hour and 3 hour delivery services</li>
-                        <li>Complete courthouse work (including research, filings, setting of hearings and court dates)</li>
+                        <li>Complete courthouse work (including research, filings, setting of hearings and court dates)
+                        </li>
                         <li>Document retrieval</li>
                         <li>Notary service</li>
                     </ul>
                     </p>
                 </section>
-                
+
                 <section class="mt-4 col-xs-12 col-md-6">
-                    <h2 class="mb-3 text-accent text-center">Process</h2>
+                    <h2 class="mb-3 text-accent text-center">Online Services</h2>
                     <p>
                     <ul class="services">
-                        <li>Witness locating/tracing available</li>
-                        <li>Investigations</li>
-                        <li>Surveilance</li>
-                        <li>Court house walk through</li>
-                        <li>Temporary Restraining Order (TRO) walk through</li>
-                        <li>NATIONWIDE service</li>
-                        <li>Direct Process Service (1-2 hours) ***</li>
-                        <li>Same Day Service</li>
-                        <li>36 hour Service</li>
-                        <li>Standard Service (First attempt 3-4 days)</li>
+                        <li>Web order entry allows you to enter orders online</li>
+                        <li>Complete online access 24 hours a day</li>
+                        <li>Online accounting (including payment history, aging and invoices)</li>
+                        <li>Email confirmations on all deliveries (notified of the time of pick up and or drop off with
+                            recipient's names
+                            instantly). Up to 4 emails per delivery allows you to notify the recipient, boss, employee
+                            or anyone that might have an
+                            interest in the delivery.</li>
                     </ul>
-                    <em>***not available in all areas. Call to verify.</em>
                     </p>
                 </section>
             </div>
-            <hr class="featurette-divider">
             <div class="row">
-                    <section class="mt-4 col-xs-12 col-md-6">
-                        <h2 class="mb-3 text-accent text-center">Online Services</h2>
-                        <p>
-                            <ul class="services">
-                                <li>Web order entry allows you to enter orders online</li>
-                                <li>Complete online access 24 hours a day</li>
-                                <li>Online accounting (including payment history, aging and invoices)</li>
-                                <li>Email confirmations on all deliveries (notified of the time of pick up and or drop off with recipient's names
-                                instantly). Up to 4 emails per delivery allows you to notify the recipient, boss, employee or anyone that might have an
-                                interest in the delivery.</li>
-                            </ul>
-                        </p>
-                    </section>
-                    <section class="mt-4 col-xs-12 col-md-6">
-                        <h2 class="mb-3 text-accent text-center">Additional Value-Added Services</h2>
-                        <p>
-                            <ul class="services">
-                                <li>Client Matter, Reference, Job Number or GF number reconciliation</li>
-                                <li>Receive copies of invoices instantly via email or fax</li>
-                                <li>Print your own tickets or use our pre-printed tickets</li>
-                            </ul>
-                        </p>
-                    </section>
+                <section class="m-auto mt-4 col-xs-12 col-md-6">
+                    <h2 class="mb-3 text-accent text-center">Additional Value-Added Services</h2>
+                    <p>
+                    <ul class="services">
+                        <li>Client Matter, Reference, Job Number or GF number reconciliation</li>
+                        <li>Receive copies of invoices instantly via email or fax</li>
+                        <li>Print your own tickets or use our pre-printed tickets</li>
+                    </ul>
+                    </p>
+                </section>
             </div>
             <hr class="featurette-divider">
         </div>
@@ -367,11 +368,11 @@
                                     <a href="/on-time-web/contact" class="list-group-item list-group-item-action">
                                         Contact Us <i style="float:right" class="bi bi-arrow-right-circle"></i>
                                     </a>
-                                    <a href="/on-time-web/about"
-                                        class="list-group-item list-group-item-action">
+                                    <a href="/on-time-web/about" class="list-group-item list-group-item-action">
                                         About Us <i style="float:right" class="bi bi-arrow-right-circle"></i>
                                     </a>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimers" class="list-group-item list-group-item-action">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimers"
+                                        class="list-group-item list-group-item-action">
                                         Terms and Conditions <i style="float:right"
                                             class="bi bi-arrow-right-circle"></i>
                                     </a>
