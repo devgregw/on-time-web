@@ -15,6 +15,13 @@
     <title>
         Create Account - On Time Couriers
     </title>
+    <script async src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+            console.log(token)
+            // document.body.querySelector('form').requestSubmit(document.body.querySelector('button#submit'))
+        }
+    </script>
 </head>
 
 <body class="pb-5">
@@ -358,7 +365,7 @@
                 <textarea class="form-control" id="comments"></textarea>
             </div>
 
-            <button class="my-5 btn btn-lg btn-success rounded-pill" type="submit">Submit</button>
+            <button class="my-5 btn btn-lg btn-success rounded-pill g-recaptcha" data-sitekey="6LcGWY8pAAAAAKcRRK9_swga9Q8cULyP5AtLFlvP" data-callback="onSubmit" data-action="submit" id="submit">Submit</button>
         </form>
     </main>
 
