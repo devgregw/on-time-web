@@ -11,7 +11,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/main.css">
-
     <title>
         Create Account - On Time Couriers
     </title>
@@ -19,8 +18,22 @@
     <script>
         function onSubmit(token) {
             document.body.querySelector('input[name=recaptcha-token]').value = token
-            alert(token)
-            document.body.querySelector('form').requestSubmit(document.body.querySelector('button#submit'))
+            let form = document.body.querySelector('form')
+            let formData = new FormData(form)
+            validatePassword()
+            if (form.reportValidity())
+                fetch('/api/formSubmission', { method: 'POST', body: formData })
+        }
+
+        function validatePassword() {
+            let password = document.body.querySelector('input[name=password]')
+            let passwordVerify = document.body.querySelector('input[name=passwordVerify]')
+            if (!password.value)
+                return
+            else if (password.value !== passwordVerify.value || passwordVerify.value.toString().length < 5)
+                passwordVerify.setCustomValidity('Passwords must match.')
+            else
+                passwordVerify.setCustomValidity('')
         }
     </script>
 </head>
@@ -189,17 +202,17 @@
     </div>
 
     <main class="container mt-5" style="max-width:700px;">
-        <form action="https://polite-island-0a268fa10.4.azurestaticapps.net/api/formSubmission" method="post">
-            <input type="hidden" name="form" value="create-account">
-            <input type="hidden" name="recaptcha-token" value="">
+        <form>
+            <input type="hidden" required readonly name="form" value="create-account">
+            <input type="hidden" required readonly name="recaptcha-token" value="">
             <h3>Company Information</h3>
             <div class="mb-3">
-                <label for="companyName" class="form-label">Company</label>
-                <input type="text" class="form-control" id="companyName">
+                <label for="companyName" class="form-label required">Company</label>
+                <input required type="text" minlength="1" class="form-control" name="companyName">
             </div>
             <div class="mb-3">
-                <label for="companyType" class="form-label">Type of Business</label>
-                <select class="form-select" id="companyType" value="">
+                <label for="companyType" class="form-label required">Type of Business</label>
+                <select required class="form-select" name="companyType" value="">
                     <option value="">Please Choose</option>
                     <option value="Attorney">Attorney</option>
                     <option value="Banking">Banking</option>
@@ -212,28 +225,28 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="companyPhone" class="form-label">Phone</label>
-                <input type="tel" placeholder="XXX-XXX-XXXX" class="form-control" id="companyPhone">
+                <label for="companyPhone" class="form-label required">Phone</label>
+                <input required type="tel" pattern="\d{3}-?\d{3}-?\d{4}" placeholder="XXX-XXX-XXXX" class="form-control" name="companyPhone">
             </div>
             <div class="mb-3">
                 <label for="companyPhoneExtension" class="form-label">Extension</label>
-                <input type="number" class="form-control" id="companyPhoneExtension">
+                <input type="number" min="1" class="form-control" name="companyPhoneExtension">
             </div>
             <div class="mb-3">
-                <label for="companyAddressLine1" class="form-label">Address</label>
-                <input type="text" class="form-control" id="companyAddressLine1">
+                <label for="companyAddressLine1" class="form-label required">Address</label>
+                <input required type="text" class="form-control" name="companyAddressLine1">
             </div>
             <div class="mb-3">
                 <label for="companyAddressLine2" class="form-label">Suite/Room/Floor</label>
-                <input type="text" class="form-control" id="companyAddressLine2">
+                <input type="text" class="form-control" name="companyAddressLine2">
             </div>
             <div class="mb-3">
-                <label for="companyAddressCity" class="form-label">City</label>
-                <input type="text" class="form-control" id="companyAddressCity">
+                <label for="companyAddressCity" class="form-label required">City</label>
+                <input required type="text" class="form-control" name="companyAddressCity">
             </div>
             <div class="mb-3">
-                <label for="companyAddressState" class="form-label">State</label>
-                <select class="form-select" id="companyAddressState" value="">
+                <label for="companyAddressState" class="form-label required">State</label>
+                <select required class="form-select" name="companyAddressState" value="">
                     <option value="">Please Select</option>
                     <option value="AK">Alaska</option>
                     <option value="AL">Alabama</option>
@@ -290,54 +303,54 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="companyAddressZipCode" class="form-label">Zip Code</label>
-                <input min="10000" max="99999" step="1" placeholder="XXXXX" type="number" class="form-control" id="companyAddressZipCode">
+                <label for="companyAddressZipCode" class="form-label required">Zip Code</label>
+                <input required min="10000" max="99999" step="1" placeholder="XXXXX" type="number" class="form-control" name="companyAddressZipCode">
             </div>
             
             <h3 class="mt-5">Your Contact Information</h3>
             <div class="mb-3">
-                <label for="contactName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="contactName">
+                <label for="contactName" class="form-label required">Name</label>
+                <input required type="text" class="form-control" name="contactName">
             </div>
             <div class="mb-3">
-                <label for="contactPhone" class="form-label">Phone</label>
-                <input type="tel" placeholder="XXX-XXX-XXXX" class="form-control" id="contactPhone">
+                <label for="contactPhone" class="form-label required">Phone</label>
+                <input required type="tel" pattern="\d{3}-?\d{3}-?\d{4}" placeholder="XXX-XXX-XXXX" class="form-control" name="contactPhone">
             </div>
             <div class="mb-3">
                 <label for="contactPhoneExtension" class="form-label">Extension</label>
-                <input type="number" class="form-control" id="contactPhoneExtension">
+                <input type="number" class="form-control" name="contactPhoneExtension">
             </div>
             <div class="mb-3">
-                <label for="contactEmail" class="form-label">Email</label>
-                <input type="email" placeholder="you@website.com" class="form-control" id="contactEmail">
+                <label for="contactEmail" class="form-label required">Email</label>
+                <input required type="email" placeholder="you@website.com" class="form-control" name="contactEmail">
             </div>
 
-            <h3 class="mt-5">Accounts Pqayable Contact</h3>
+            <h3 class="mt-5">Accounts Payable Contact</h3>
             <div class="mb-3">
-                <label for="accountsContactName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="accountsContactName">
+                <label for="accountsContactName" class="form-label required">Name</label>
+                <input required type="text" class="form-control" name="accountsContactName">
             </div>
             <div class="mb-3">
-                <label for="accountsContactPhone" class="form-label">Phone</label>
-                <input type="tel" placeholder="XXX-XXX-XXXX" class="form-control" id="accountsContactPhone">
+                <label for="accountsContactPhone" class="form-label required">Phone</label>
+                <input required type="tel" pattern="\d{3}-?\d{3}-?\d{4}" placeholder="XXX-XXX-XXXX" class="form-control" name="accountsContactPhone">
             </div>
             <div class="mb-3">
                 <label for="accountsContactPhoneExtension" class="form-label">Extension</label>
-                <input type="number" class="form-control" id="accountsContactPhoneExtension">
+                <input type="number" class="form-control" name="accountsContactPhoneExtension">
             </div>
             <div class="mb-3">
-                <label for="accountsContactEmail" class="form-label">Email</label>
-                <input type="email" placeholder="you@website.com" class="form-control" id="accountsContactEmail">
+                <label for="accountsContactEmail" class="form-label required">Email</label>
+                <input required type="email" placeholder="you@website.com" class="form-control" name="accountsContactEmail">
             </div>
             <div class="mb-3">
-                <label class="form-label">Is the billing address the same as the business address above?</label>
+                <label class="form-label required">Is the billing address the same as the business address above?</label>
                 <br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input required class="form-check-input" type="radio" name="sameBillingAddress" id="inlineRadio1" value="Yes">
                     <label class="form-check-label" for="inlineRadio1">Yes</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input required class="form-check-input" type="radio" name="sameBillingAddress" id="inlineRadio2" value="No">
                     <label class="form-check-label" for="inlineRadio2">No</label>
                 </div>
                 <div class="form-text">If the billing address is different than the main business address above, please use the comments/instructions box below
@@ -348,24 +361,24 @@
             <p>Your username will be automatically assigned based on the information you have provided. Please enter your desired
             password, and the email address you want the username and password connected to.</p>
             <div class="mb-3">
-                <label for="password" class="form-label">Enter Desired Password</label>
-                <input type="password" class="form-control" id="password">
+                <label for="password" class="form-label required">Enter Desired Password</label>
+                <input required minlength="5" type="password" class="form-control" name="password">
                 <div class="form-text">Must be at least 5 alpha-numeric characters.</div>
             </div>
             <div class="mb-3">
-                <label for="passwordVerify" class="form-label">Verify Password</label>
-                <input type="password" class="form-control" id="passwordVerify">
+                <label for="passwordVerify" class="form-label required">Verify Password</label>
+                <input required minlength="5" type="password" class="form-control" name="passwordVerify" onchange="validatePassword()" onkeyup="this.onchange()" oninput="this.onchange()" onpaste="this.onchange()">
                 <div class="form-text">Passwords must match.</div>
             </div>
             <div class="mb-3">
-                <label for="loginEmail" class="form-label">Account Email</label>
-                <input type="email" placeholder="you@website.com" class="form-control" id="loginEmail">
+                <label for="loginEmail" class="form-label required">Account Email</label>
+                <input required type="email" placeholder="you@website.com" class="form-control" name="loginEmail">
             </div>
 
             <h3 class="mt-5">Almost Finished...</h3>
             <div class="mb-3">
                 <label for="comments" class="form-label">Comments</label>
-                <textarea class="form-control" id="comments"></textarea>
+                <textarea class="form-control" name="comments"></textarea>
             </div>
 
             <button class="my-5 btn btn-lg btn-success rounded-pill g-recaptcha" data-sitekey="6LcGWY8pAAAAAKcRRK9_swga9Q8cULyP5AtLFlvP" data-callback="onSubmit" data-action="submit" id="submit">Submit</button>

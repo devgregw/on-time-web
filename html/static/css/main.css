@@ -28,3 +28,13 @@ h2 span.badge {
 .featurette-image {
     object-fit: cover;
 }
+
+label.required::after {
+    content: "*";
+    color: red;
+}
+
+.form-select:user-invalid,
+.form-control:user-invalid {
+    border: 2px solid red;
+}

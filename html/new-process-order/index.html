@@ -19,8 +19,10 @@
     <script>
         function onSubmit(token) {
             document.body.querySelector('input[name=recaptcha-token]').value = token
-            alert(token)
-            document.body.querySelector('form').requestSubmit(document.body.querySelector('button#submit'))
+            let form = document.body.querySelector('form')
+            let formData = new FormData(form)
+            if (form.reportValidity())
+                fetch('/api/formSubmission', { method: 'POST', body: formData })
         }
     </script>
 </head>
@@ -189,40 +191,40 @@
     </div>
 
     <main class="container mt-5" style="max-width:700px;">
-        <form action="https://polite-island-0a268fa10.4.azurestaticapps.net/api/formSubmission" method="post">
+        <form>
             <input type="hidden" name="form" value="new-process-order">
             <input type="hidden" name="recaptcha-token" value="">
             <h3>Contact Information</h3>
             <div class="mb-3">
-                <label for="companyName" class="form-label">Company Name</label>
-                <input type="text" class="form-control" id="companyName">
+                <label for="companyName" class="form-label required">Company Name</label>
+                <input type="text" class="form-control" required name="companyName">
             </div>
             <div class="mb-3">
-                <label for="companyName" class="form-label">Your Name</label>
-                <input type="text" class="form-control" id="companyName">
+                <label for="companyName" class="form-label required">Your Name</label>
+                <input type="text" class="form-control" required name="companyName">
             </div>
             <div class="mb-3">
-                <label for="emailAddress" class="form-label">Email Address</label>
-                <input type="email" placeholder="you@website.com" class="form-control" id="emailAddress">
+                <label for="emailAddress" class="form-label required">Email Address</label>
+                <input type="email" placeholder="you@website.com" required class="form-control" name="emailAddress">
             </div>
             <div class="mb-3">
-                <label for="phoneNumber" class="form-label">Phone Number</label>
-                <input type="tel" placeholder="XXX-XXX-XXXX" class="form-control" id="phoneNumber">
+                <label for="phoneNumber" class="form-label required">Phone Number</label>
+                <input type="tel" required pattern="\d{3}-?\d{3}-?\d{4}" placeholder="XXX-XXX-XXXX" class="form-control" name="phoneNumber">
                 <div class="form-text">Format: XXX-XXX-XXXX (plus extension if needed)</div>
             </div>
             
             <h3 class="mt-5">Order Information</h3>
             <div class="mb-3">
-                <label for="referenceNumber" class="form-label">Reference/Client Matter Number</label>
-                <input type="text" class="form-control" id="referenceNumber">
+                <label for="referenceNumber" class="form-label required">Reference/Client Matter Number</label>
+                <input type="text" required class="form-control" name="referenceNumber">
             </div>
             <div class="mb-3">
-                <label for="caseNumber" class="form-label">Case Number</label>
-                <input type="text" class="form-control" id="caseNumber">
+                <label for="caseNumber" class="form-label required">Case Number</label>
+                <input type="text" required class="form-control" name="caseNumber">
             </div>
             <div class="mb-3">
-                <label for="serviceType" class="form-label">Type of Service Required (Speed)</label>
-                <select class="form-select" id="serviceType" value="">
+                <label for="serviceType" class="form-label required">Type of Service Required (Speed)</label>
+                <select class="form-select" required name="serviceType" value="">
                     <option value="">Choose One</option>
                     <option value="Standard">Standard</option>
                     <option value="36 Hour">36 Hour</option>
@@ -231,28 +233,28 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="pickupLocation" class="form-label">Pickup Location</label>
-                <input type="text" class="form-control" id="pickupLocation">
+                <label for="pickupLocation" class="form-label required">Pickup Location</label>
+                <input type="text" required class="form-control" name="pickupLocation">
             </div>
             <div class="mb-3">
-                <label class="form-label">Who Are We Serving?</label>
+                <label class="form-label required">Who Are We Serving?</label>
                 <br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <input required class="form-check-input" type="radio" name="individualOrBusiness" id="inlineRadio1" value="An Individual">
                     <label class="form-check-label" for="inlineRadio1">An Individual</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <input required class="form-check-input" type="radio" name="individualOrBusiness" id="inlineRadio2" value="A Business">
                     <label class="form-check-label" for="inlineRadio2">A Business</label>
                 </div>
             </div>
             <div class="mb-3">
-                <label for="serveName" class="form-label">Individual/Business to be Served</label>
-                <input type="text" class="form-control" id="serveName">
+                <label for="serveName" class="form-label required">Individual/Business to be Served</label>
+                <input type="text" required class="form-control" name="serveName">
             </div>
             <div class="mb-3">
                 <label for="businessPosition" class="form-label">If Business, Select Option</label>
-                <select class="form-select" id="businessPosition" value="">
+                <select class="form-select" name="businessPosition" value="">
                     <option value="">Choose One</option>
                     <option value="President">President</option>
                     <option value="VP">Vice President</option>
@@ -263,19 +265,19 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="serveAddress" class="form-label">Individual/Business Address</label>
-                <input type="text" class="form-control" id="serveAddress">
+                <label for="serveAddress" class="form-label required">Individual/Business Address</label>
+                <input type="text" required class="form-control" name="serveAddress">
                 <div class="form-text">Please enter a complete address w/ zip code.</div>
             </div>
             
             <div class="mb-3">
                 <label for="comments" class="form-label">Additional Notes or Instructions</label>
-                <textarea class="form-control" id="comments"></textarea>
+                <textarea class="form-control" name="comments"></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="uploadFile" class="form-label">Upload File</label>
-                <input type="file" class="form-control" id="uploadFile">
+                <input type="file" class="form-control" name="uploadFile">
             </div>
 
             <button class="my-5 btn btn-lg btn-success rounded-pill g-recaptcha" data-sitekey="6LcGWY8pAAAAAKcRRK9_swga9Q8cULyP5AtLFlvP" data-callback="onSubmit" data-action="submit" id="submit">Submit</button>
