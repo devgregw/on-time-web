@@ -1,5 +1,6 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
 import recaptcha from 'recaptcha-promise'
+import { createTransport } from 'nodemailer'
 
 export async function formSubmission(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     const formData = await request.formData()
@@ -22,7 +23,7 @@ export async function formSubmission(request: HttpRequest, context: InvocationCo
     }
 
     // Verify reCAPTCHA token
-    const token = formData.get('recaptcha-token').toString()
+    const token = formData.get('g-recaptcha-response')?.toString()
     const verifyCaptcha = recaptcha.create({ secret: RECAPTCHA_SECRET })
     const challengePassed = await verifyCaptcha(token)
     if (!challengePassed) {
@@ -30,9 +31,7 @@ export async function formSubmission(request: HttpRequest, context: InvocationCo
         return { jsonBody: { message: 'reCAPTCHA verification failed.' }, status: 400 }
     }
 
-    let obj: Record<string, string> = {}
-    formData.forEach((value, key) => obj[key] = ['object', 'function', 'symbol'].includes(typeof value) ? '<<file>>' : value.toString())
-    return { jsonBody: { message: 'Success', form: obj } };
+    return { jsonBody: { message: 'Success' } };
 };
 
 app.http('formSubmission', {

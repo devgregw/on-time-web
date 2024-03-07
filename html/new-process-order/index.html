@@ -18,7 +18,6 @@
     <script async src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         function onSubmit(token) {
-            document.body.querySelector('input[name=recaptcha-token]').value = token
             let form = document.body.querySelector('form')
             let formData = new FormData(form)
             if (form.reportValidity())
@@ -193,7 +192,6 @@
     <main class="container mt-5" style="max-width:700px;">
         <form>
             <input type="hidden" name="form" value="new-process-order">
-            <input type="hidden" name="recaptcha-token" value="">
             <h3>Contact Information</h3>
             <div class="mb-3">
                 <label for="companyName" class="form-label required">Company Name</label>

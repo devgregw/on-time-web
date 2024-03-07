@@ -17,7 +17,6 @@
     <script async src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         function onSubmit(token) {
-            document.body.querySelector('input[name=recaptcha-token]').value = token
             let form = document.body.querySelector('form')
             let formData = new FormData(form)
             validatePassword()
@@ -204,7 +203,6 @@
     <main class="container mt-5" style="max-width:700px;">
         <form>
             <input type="hidden" required readonly name="form" value="create-account">
-            <input type="hidden" required readonly name="recaptcha-token" value="">
             <h3>Company Information</h3>
             <div class="mb-3">
                 <label for="companyName" class="form-label required">Company</label>
