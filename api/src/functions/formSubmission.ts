@@ -1,15 +1,40 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import { env } from "process";
+import recaptcha from 'recaptcha-promise'
 
 export async function formSubmission(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
-    context.log(`Http function processed request for url "${request.url}"`);
-    const name = env['name'] || request.query.get('name') || await request.text() || 'world';
+    const formData = await request.formData()
 
-    return { body: `Hello, ${name}!` };
+    // Environment variables
+    const {
+        RECAPTCHA_SECRET,
+        EMAIL_FROM,
+        EMAIL_PASSWORD,
+        EMAIL_TO_MAIN,
+        EMAIL_TO_PROCESS,
+        SMTP_SERVER,
+        SMTP_PORT
+    } = process.env
+    // Return code 500 if one or more are falsy
+    let invalidEnvironment = [RECAPTCHA_SECRET, EMAIL_FROM, EMAIL_PASSWORD, EMAIL_TO_MAIN, EMAIL_TO_PROCESS].some(value => !value)
+    if (invalidEnvironment) {
+        context.error('Invalid server configuration: one or more required environment variables are unset.')
+        return { jsonBody: { message: 'Invalid server configuration.' }, status: 500 }
+    }
+
+    // Verify reCAPTCHA token
+    const token = formData.get('recaptcha-token').toString()
+    const verifyCaptcha = recaptcha.create({ secret: RECAPTCHA_SECRET })
+    const challengePassed = await verifyCaptcha(token)
+    if (!challengePassed) {
+        context.info('reCAPTCHA verification failed.', token)
+        return { jsonBody: { message: 'reCAPTCHA verification failed.' }, status: 400 }
+    }
+
+    return { jsonBody: { message: 'Success', form: formData.get('form'), token } };
 };
 
 app.http('formSubmission', {
-    methods: ['GET', 'POST'],
+    methods: ['POST'],
     authLevel: 'anonymous',
     handler: formSubmission
 });
