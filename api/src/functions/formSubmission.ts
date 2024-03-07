@@ -31,7 +31,7 @@ export async function formSubmission(request: HttpRequest, context: InvocationCo
     }
 
     let obj: Record<string, string> = {}
-    formData.forEach((value, key) => obj[key] = value instanceof File ? '<<file>>' : value.toString())
+    formData.forEach((value, key) => obj[key] = ['object', 'function', 'symbol'].includes(typeof value) ? '<<file>>' : value.toString())
     return { jsonBody: { message: 'Success', form: obj } };
 };
 
