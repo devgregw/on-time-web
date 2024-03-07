@@ -18,8 +18,9 @@
     <script async src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         function onSubmit(token) {
-            console.log(token)
-            // document.body.querySelector('form').requestSubmit(document.body.querySelector('button#submit'))
+            document.body.querySelector('input[name=recaptcha-token]').value = token
+            alert(token)
+            document.body.querySelector('form').requestSubmit(document.body.querySelector('button#submit'))
         }
     </script>
 </head>
@@ -188,7 +189,9 @@
     </div>
 
     <main class="container mt-5" style="max-width:700px;">
-        <form>
+        <form action="https://polite-island-0a268fa10.4.azurestaticapps.net/api/formSubmission" method="post">
+            <input type="hidden" name="form" value="create-account">
+            <input type="hidden" name="recaptcha-token" value="">
             <h3>Company Information</h3>
             <div class="mb-3">
                 <label for="companyName" class="form-label">Company</label>
