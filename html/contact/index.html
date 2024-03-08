@@ -21,7 +21,9 @@
                 let form = document.body.querySelector('form')
                 let formData = new FormData(form)
                 let submitText = document.body.querySelector('span#submitText')
+                let submitButton = document.body.querySelector('button[data-action=submit]')
                 if (form.reportValidity()) {
+                    submitButton.disabled = true
                     submitText.textContent = "Please wait..."
                     fetch('/api/formSubmission', { method: 'POST', body: formData }).then(r => {
                         if (r.ok) {
@@ -33,7 +35,10 @@
                     }, e => {
                         console.error(e)
                         alert('Sorry, an error occurred while submitting this form. Please try again.')
-                    }).finally(() => submitText.textContent = "Submit")
+                    }).finally(() => {
+                        submitButton.disabled = false
+                        submitText.textContent = "Submit"
+                    })
                 }
             }
     </script>

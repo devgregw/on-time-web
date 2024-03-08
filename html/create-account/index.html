@@ -20,9 +20,10 @@
             let form = document.body.querySelector('form')
             let formData = new FormData(form)
             validatePassword()
-            let submitText = document.body.querySelector('button#submit')
+            let submitButton = document.body.querySelector('button#submit')
             if (form.reportValidity()) {
-                submitText.textContent = "Please wait..."
+                submitButton.disabled = true
+                submitButton.textContent = "Please wait..."
                 fetch('/api/formSubmission', { method: 'POST', body: formData }).then(r => {
                     if (r.ok) {
                         alert('Thank you, we have received your request. A member of our team will follow up to confirm your new account shortly.')
@@ -33,7 +34,10 @@
                 }, e => {
                     console.error(e)
                     alert('Sorry, an error occurred while submitting this form. Please try again.')
-                }).finally(() => submitText.textContent = "Submit")
+                }).finally(() => {
+                    submitButton.disabled = false
+                    submitButton.textContent = "Submit"
+                })
             }
         }
 
