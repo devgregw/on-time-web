@@ -20,8 +20,21 @@
         function onSubmit(token) {
                 let form = document.body.querySelector('form')
                 let formData = new FormData(form)
-                if (form.reportValidity())
-                    fetch('/api/formSubmission', { method: 'POST', body: formData })
+                let submitText = document.body.querySelector('span#submitText')
+                if (form.reportValidity()) {
+                    submitText.textContent = "Please wait..."
+                    fetch('/api/formSubmission', { method: 'POST', body: formData }).then(r => {
+                        if (r.ok) {
+                            alert('Thank you, your message has been sent.')
+                            form.reset()
+                            window.location.reload()
+                        } else
+                            alert('Sorry, an error occurred while submitting this form. Please try again.')
+                    }, e => {
+                        console.error(e)
+                        alert('Sorry, an error occurred while submitting this form. Please try again.')
+                    }).finally(() => submitText.textContent = "Submit")
+                }
             }
     </script>
 </head>
@@ -303,7 +316,7 @@
                             <label for="comments" class="required">Comments</label>
                         </div>
                         <div class="mt-3" role="group">
-                            <button class="btn btn-success rounded-pill fs-5 g-recaptcha" data-sitekey="6LcGWY8pAAAAAKcRRK9_swga9Q8cULyP5AtLFlvP" data-callback="onSubmit" data-action="submit"><i class="bi bi-send"></i> Submit</button>
+                            <button class="btn btn-success rounded-pill fs-5 g-recaptcha" data-sitekey="6LcGWY8pAAAAAKcRRK9_swga9Q8cULyP5AtLFlvP" data-callback="onSubmit" data-action="submit"><i class="bi bi-send"></i> <span id="submitText">Submit</span></button>
                         </div>
                     </form>
                 </div>
