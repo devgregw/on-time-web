@@ -205,6 +205,80 @@
                 </div>
             </div>
         </div>
+        <div class="d-block mt-3 justify-content-center">
+            <a data-bs-toggle="modal" data-bs-target="#loginModal" href="#"
+                class="btn btn-secondary btn-lg px-4 rounded-pill"><i class="bi bi-key"></i> Log in</a>
+            <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="loginModalLabel">Process Services Login</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="px-3" action="https://www.pstprostatus.net/asp/pstloginvalid3.aspx"
+                                name="login" method="POST">
+                                <!-- Pass us a valid color value here for the BACKGROUND color of the page and we'll render the results page with it -->
+                                <input type="hidden" name="bgcolor" value="White">
+                                <!-- Pass us a valid URL of a background image and we'll render the results page with it -->
+                                <input type="hidden" name="bgimage" value="">
+                                <!-- Pass us a valid URL of an image for your company's logo and we'll render the results page with it -->
+                                <input type="hidden" name="logo" value="">
+                                <!-- Pass us a valid color value here for the LINK color of the page and we'll render the results page with it -->
+                                <input type="hidden" name="linkcolor" value="">
+                                <!-- Pass us a valid color value here for the ACTIVE LINK color of the page and we'll render the results page with it -->
+                                <input type="hidden" name="alinkcolor" value="">
+                                <!-- Pass us a valid color value here for the VISITED LINK color of the page and we'll render the results page with it -->
+                                <input type="hidden" name="vlinkcolor" value="">
+                                <!-- Pass us a valid color value here for the TABLE BORDER color and we'll render the results page with it -->
+                                <input type="hidden" name="tablebordercolor" value="">
+                                <!-- Pass us a valid color value here for each table header's background color and we'll render the results page with it -->
+                                <input type="hidden" name="tableheaderbgcolor" value="">
+                                <!-- Pass us a valid font type here for each table header's font and we'll render the results page with it -->
+                                <input type="hidden" name="tableheaderfonttype" value="">
+                                <!-- Pass us a valid color value here for the table header's font color and we'll render the results page with it -->
+                                <input type="hidden" name="tableheaderfontcolor" value="">
+                                <!-- Pass us a valid color value here for the table's background color and we'll render the results page with it -->
+                                <input type="hidden" name="tablebgcolor" value="">
+                                <!-- Pass us a valid font type here for each page's general font type and we'll render the results page with it -->
+                                <input type="hidden" name="fonttype" value="">
+                                <!-- Pass us a valid color value here for each page's general font color and we'll render the results page with it -->
+                                <input type="hidden" name="fontcolor" value="">
+                                <!-- Pass us a valid color value here for each page title's font color and we'll render the results page with it -->
+                                <input type="hidden" name="titlenamecolor" value="">
+                                <!-- Pass us a valid font type value here for each page title's font type and we'll render the results page with it -->
+                                <input type="hidden" name="titlenamefonttype" value="">
+                                <!-- Change the 'name' tag below to just "DBSCode" and set the value tag to your PST ID.
+                                                                                                                This will help prevent duplicate Login Names between PST users. -->
+                                <input type="hidden" name="Sample1_DBSCode" value="dba">
+                                <!-- For Multiple Companies, set the value tag this way.
+                                                                                                                Make sure you include the single quotes and commas. -->
+                                <input type="hidden" name="Sample2_DBSCode" value="'dba','dbb','dbc'">
+                                <div class="form-floating mb-3">
+                                    <input name="account" size="25" maxlength="45" type="text" class="form-control"
+                                        id="processAccount" placeholder="Username">
+                                    <label for="processAccount">Username</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input name="password" size="25" maxlength="45" type="password" class="form-control"
+                                        id="password" placeholder="Password">
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="mt-3" role="group">
+                                    <button type="submit" name="submit" class="btn btn-success rounded-pill fs-5"><i
+                                            class="bi bi-key"></i> Log
+                                        in</button>
+                                </div>
+                                <a class="icon-link fs-5 mt-2" href="/new-process-order"><i class="bi bi-send-plus"></i>
+                                    Place a new
+                                    process
+                                    order</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <main class="container">
