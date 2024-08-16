@@ -1,0 +1,17 @@
+ul.services li {
+    position: relative;
+    list-style: none;
+    margin-top: 0.25rem;
+}
+
+ul.services li::before {
+    background-image: url('https://icons.getbootstrap.com/assets/icons/chevron-right.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: -20px;
+    width: 16px;
+    height: 16px;
+}

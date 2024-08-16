@@ -1,0 +1,13 @@
+{
+    "allInOutput": true,
+    "root": "src/html/pages",
+    "input": "**/*.html",
+    "output": "dist",
+    "plugins": {
+        "posthtml-modules": {
+            "root": "./src/html/components",
+            "initial": true
+        },
+        "htmlnano": {}
+    }
+}
