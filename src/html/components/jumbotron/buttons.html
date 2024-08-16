@@ -1,0 +1,32 @@
+<div class="d-inline-flex mt-3 gap-4 justify-content-center">
+    <div class="align-items-center" style="flex:1 0 50%;">
+        <a href="tel:+12147409999" class="d-block btn btn-primary btn-lg px-4 rounded-pill" style="width:100%">
+            <i class="bi me-1 d-none d-sm-inline bi-telephone-outbound"></i>
+            Call Us 24/7
+        </a>
+        <small class="text-light">214-740-9999</small>
+    </div>
+    <div class="align-items-center dropdown" style="flex:1 0 50%;">
+        <button class="d-block btn btn-success btn-lg px-4 rounded-pill" style="width:100%" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bi me-1 d-none d-sm-inline bi-receipt"></i>
+            Pay Invoice
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+            <li>
+                <h6 class="dropdown-header">Select payment method</h6>
+            </li>
+            <li><a class="dropdown-item" href="https://secure.ontimecouriers.com/QuickPay.aspx">Card</a>
+            </li>
+            <li>
+                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#paypalModal">PayPal</a>
+            </li>
+            <li>
+                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#zelleModal">Zelle</a>
+            </li>
+        </ul>
+        <small class="text-light">Card, PayPal, &amp; More</small>
+        <module href="/modals/paypalModal.html"></module>
+        <module href="/modals/zelleModal.html"></module>
+    </div>
+</div>

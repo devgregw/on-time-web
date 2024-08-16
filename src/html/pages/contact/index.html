@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <module href="/head.html"></module>
+
+    <title>
+        Contact Us - On Time Couriers
+    </title>
+
+    <script>
+        function onSubmit(token) {
+            let form = document.body.querySelector('form')
+            let formData = new FormData(form)
+            let submitText = document.body.querySelector('span#submitText')
+            let submitButton = document.body.querySelector('button[data-action=submit]')
+            if (form.reportValidity()) {
+                submitButton.disabled = true
+                submitText.textContent = "Please wait..."
+                fetch('/api/formSubmission', { method: 'POST', body: formData }).then(r => {
+                    if (r.ok) {
+                        alert('Thank you, your message has been sent.')
+                        form.reset()
+                        window.location.reload()
+                    } else
+                        alert('Sorry, an error occurred while submitting this form. Please try again.')
+                }, e => {
+                    console.error(e)
+                    alert('Sorry, an error occurred while submitting this form. Please try again.')
+                }).finally(() => {
+                    submitButton.disabled = false
+                    submitText.textContent = "Submit"
+                })
+            }
+        }
+    </script>
+</head>
+
+<body class="pb-5">
+    <module href="/navbar.html"></module>
+
+    <module href="/jumbotron/jumbotron.html">
+        <module href="/jumbotron/header.html">
+            Contact Us
+        </module>
+        <module href="/jumbotron/text.html">
+            Have a general question or special request? Want to share your feedback with us? Feel free to call us, email
+            one of the
+            addresses below or complete the form below and we will respond to you right away.
+        </module>
+        <module href="/jumbotron/divider.html"></module>
+        <module href="/jumbotron/buttons.html"></module>
+    </module>
+
+    <main class="container">
+        <div class="mt-5">
+            <h2 class="mb-3">Email Addresses</h2>
+            <div class="row">
+                <div class="col">
+                    <table class="table table-striped border">
+                        <tbody>
+                            <tr>
+                                <td>Courier Related Inquiries</td>
+                                <td>
+                                    <a href="mailto:orders@ontimecouriers.com" class="icon-link gap-2">
+                                        <i class="bi bi-envelope-at"></i>
+                                        orders@ontimecouriers.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Process Serving Inquiries</td>
+                                <td>
+                                    <a href="mailto:service@ontimeprocess.com" class="icon-link gap-2">
+                                        <i class="bi bi-envelope-at"></i>
+                                        service@ontimeprocess.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Investigation Inquiries</td>
+                                <td>
+                                    <a href="mailto:service@ontimeprocess.com" class="icon-link gap-2">
+                                        <i class="bi bi-envelope-at"></i>
+                                        service@ontimeprocess.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Accounting Inquiries</td>
+                                <td>
+                                    <a href="mailto:accounting@ontimecouriers.com" class="icon-link gap-2">
+                                        <i class="bi bi-envelope-at"></i>
+                                        accounting@ontimecouriers.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pricing, Scheduling &amp; Rate Inquiries</td>
+                                <td>
+                                    <a href="mailto:sales@ontimecouriers.com" class="icon-link gap-2">
+                                        <i class="bi bi-envelope-at"></i>
+                                        sales@ontimecouriers.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rewards Inquiries</td>
+                                <td>
+                                    <a href="mailto:rewards@ontimecouriers.com" class="icon-link gap-2">
+                                        <i class="bi bi-envelope-at"></i>
+                                        rewards@ontimecouriers.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Customer Service, Suggestions &amp; Feedback</td>
+                                <td>
+                                    <a href="mailto:office@ontimecouriers.com" class="icon-link gap-2">
+                                        <i class="bi bi-envelope-at"></i>
+                                        office@ontimecouriers.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Employment Inquiries</td>
+                                <td>
+                                    <a href="mailto:office@ontimecouriers.com" class="icon-link gap-2">
+                                        <i class="bi bi-envelope-at"></i>
+                                        office@ontimecouriers.com
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Contract Driver Opportunities</td>
+                                <td>
+                                    <a href="mailto:office@ontimecouriers.com" class="icon-link gap-2">
+                                        <i class="bi bi-envelope-at"></i>
+                                        office@ontimecouriers.com
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h2 class="fw-normal mt-5 mb-3">Send Us a Message</h2>
+                    <form>
+                        <input type="hidden" name="form" value="contact">
+                        <div class="form-floating mb-3">
+                            <input name="name" required size="30" maxlength="150" type="text" class="form-control"
+                                id="name" placeholder="Name">
+                            <label for="name" class="required">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input name="company" size="30" maxlength="150" type="text" class="form-control"
+                                id="company" placeholder="Company">
+                            <label for="company">Company</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input name="phone" size="30" maxlength="150" type="tel" class="form-control" id="phone"
+                                placeholder="Phone">
+                            <label for="phone">Phone</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input name="email" required size="30" maxlength="150" type="email" class="form-control"
+                                id="email" placeholder="Email">
+                            <label for="email" class="required">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea required name="comments" class="form-control" placeholder="Comments" id="comments"
+                                style="height: 100px"></textarea>
+                            <label for="comments" class="required">Comments</label>
+                        </div>
+                        <div class="mt-3" role="group">
+                            <button class="btn btn-success rounded-pill fs-5 g-recaptcha"
+                                data-sitekey="6LcGWY8pAAAAAKcRRK9_swga9Q8cULyP5AtLFlvP" data-callback="onSubmit"
+                                data-action="submit"><i class="bi bi-send"></i> <span
+                                    id="submitText">Submit</span></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h2 class="fw-normal mt-5 mb-3">Location &amp; Hours</h2>
+                    <p>
+                        <strong>Our Address</strong><br>
+                        <a>1700 Pacific Avenue, Suite 1040<br>Dallas, TX, 75201</a>
+                    </p>
+                    <p>
+                        <strong>Hours of Operation</strong><br>
+                        Orders can be placed 24/7<br>
+                        Office Open: M-F 7am to 5pm
+                    </p>
+                    <h2 class="fw-normal mt-5 mb-3">Call Us 24/7</h2>
+                    <a href="tel:+12147409999" class="icon-link gap-2" style="font-size: xx-large;">
+                        <i class="bi bi-telephone-outbound"></i>
+                        (214) 740-9999
+                    </a>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+
+        <div class="text-center">
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <h2 class="fw-normal mt-5 mb-3 fs-3">Courier Service</h2>
+                    <module href="/login/courierLogin.html"></module>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <h2 class="fw-normal mt-5 mb-3 fs-3">Process Service</h2>
+                    <module href="/login/processLogin.html"></module>
+                </div>
+            </div>
+        </div>
+
+        <module href="/traffic.html"></module>
+    </main>
+</body>
+
+</html>

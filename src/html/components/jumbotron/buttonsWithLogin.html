@@ -1,0 +1,18 @@
+<module href="/jumbotron/buttons.html"></module>
+<div class="d-block mt-3 justify-content-center">
+    <a data-bs-toggle="modal" data-bs-target="#loginModal" href="#"
+        class="btn btn-secondary btn-lg px-4 rounded-pill"><i class="bi bi-key"></i> Log in</a>
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">{{ loginTitle }}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <content></content>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

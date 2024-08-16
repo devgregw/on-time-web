@@ -1,0 +1,25 @@
+<form class="px-3" action="https://ontimeweb.net/wo/weborder/j_security_check" method="POST">
+    <input type="hidden" name="j_uri" value="https://ontimeweb.net/wo/weborder/OrderList.jsp">
+    <div class="form-floating mb-3">
+        <input name="j_username" size="10" maxlength="45" type="text" class="form-control" id="courierAcctNo"
+            placeholder="Account number">
+        <label for="courierAcctNo">Account number</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="caller" size="25" maxlength="45" type="text" class="form-control" id="courierName"
+            placeholder="Name">
+        <label for="courierName">Name</label>
+    </div>
+    <div class="form-floating">
+        <input name="j_password" size="25" maxlength="45" type="password" class="form-control" id="password"
+            placeholder="Password">
+        <label for="password">Password</label>
+    </div>
+    <div class="mt-3" role="group">
+        <button type="submit" class="btn btn-success rounded-pill fs-5"><i class="bi bi-key"></i>
+            Log
+            in</button>
+    </div>
+    <a class="icon-link fs-5 mt-2" href="/create-account"><i class="bi bi-person-add"></i>Create a
+        new account</a>
+</form>

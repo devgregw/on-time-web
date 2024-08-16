@@ -1,0 +1,48 @@
+{
+  "name": "on-time-web",
+  "version": "1.0.0",
+  "description": "On Time Couriers website",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "css:lint": "stylelint src/scss/*.scss  å--custom-syntax postcss-scss",
+    "css:scss": "sass -s compressed src/scss:dist/static/css",
+    "css:autoprefixer": "postcss -u autoprefixer -r dist/static/css/*.css",
+    "build:css": "npm run css:lint && npm run css:scss && npm run css:autoprefixer",
+    "watch:css": "onchange \"src/scss\" -- npm run build:css",
+    "build:img": "imagemin src/img/**/* --out-dir=dist/static/img",
+    "watch:img": "onchange \"src/img\" -- npm run build:img",
+    "build:html": "posthtml -c posthtml.json",
+    "watch:html": "onchange \"src/html\" -- npm run build:html",
+    "watch:config": "onchange \"posthtml.json\" -- npm run build:html",
+    "watch": "run-p build serve watch:*",
+    "build": "run-p build:*",
+    "serve": "browser-sync start --server \"dist\" --files \"dist\""
+  },
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/devgregw/on-time-web.git"
+  },
+  "author": "Greg Whatley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devgregw/on-time-web/issues"
+  },
+  "homepage": "https://ontimecouriers.com",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^3.0.2",
+    "htmlnano": "^2.1.1",
+    "imagemin-cli": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^11.0.0",
+    "postcss-scss": "^4.0.9",
+    "posthtml": "^0.16.6",
+    "posthtml-cli": "^0.10.0",
+    "posthtml-modules": "^0.9.1",
+    "sass": "^1.77.8",
+    "stylelint": "^16.8.2",
+    "stylelint-config-standard-scss": "^13.1.0"
+  }
+}
