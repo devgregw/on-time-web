@@ -3,37 +3,10 @@
 
 <head>
     <module href="/head.html"></module>
-
     <title>
         Contact Us - On Time Couriers
     </title>
-
-    <script>
-        function onSubmit(token) {
-            let form = document.body.querySelector('form')
-            let formData = new FormData(form)
-            let submitText = document.body.querySelector('span#submitText')
-            let submitButton = document.body.querySelector('button[data-action=submit]')
-            if (form.reportValidity()) {
-                submitButton.disabled = true
-                submitText.textContent = "Please wait..."
-                fetch('/api/formSubmission', { method: 'POST', body: formData }).then(r => {
-                    if (r.ok) {
-                        alert('Thank you, your message has been sent.')
-                        form.reset()
-                        window.location.reload()
-                    } else
-                        alert('Sorry, an error occurred while submitting this form. Please try again.')
-                }, e => {
-                    console.error(e)
-                    alert('Sorry, an error occurred while submitting this form. Please try again.')
-                }).finally(() => {
-                    submitButton.disabled = false
-                    submitText.textContent = "Submit"
-                })
-            }
-        }
-    </script>
+    <script src="/static/js/formsubmission.js"></script>
 </head>
 
 <body class="pb-5">
@@ -148,7 +121,7 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <h3 class="fw-normal mt-5 mb-3">Send Us a Message</h3>
-                    <form>
+                    <form data-submissionmessage="Thank you, your message has been sent.">
                         <input type="hidden" name="form" value="contact">
                         <div class="form-floating mb-3">
                             <input name="name" required size="30" maxlength="150" type="text" class="form-control"

@@ -28,12 +28,7 @@
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#disclaimers">Disclaimers</a>
                 </li>
             </ul>
-            <script type="text/javascript">
-                let path = window.location.pathname.split('index.html')[0]
-                if (path !== '/' && path.endsWith('/'))
-                    path = path.substring(0, path.length - 1)
-                document.querySelector('a.nav-link[href="' + path + '"]')?.classList.add('active')
-            </script>
+            <script defer src="/static/js/navbar.js"></script>
             <module href="/modals/disclaimers.html"/>
         </div>
     </div>
