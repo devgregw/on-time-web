@@ -3,35 +3,10 @@
 
 <head>
     <module href="/head.html"></module>
-
     <title>
         New Process Order - On Time Couriers
     </title>
-    <script>
-        function onSubmit(token) {
-            let form = document.body.querySelector('form')
-            let formData = new FormData(form)
-            let submitButton = document.body.querySelector('button#submit')
-            if (form.reportValidity()) {
-                submitButton.disabled = true
-                submitButton.textContent = "Please wait..."
-                fetch('/api/formSubmission', { method: 'POST', body: formData }).then(r => {
-                    if (r.ok) {
-                        alert('Thank you, we have received your request. A member of our team will follow up to confirm your order shortly.')
-                        form.reset()
-                        window.location.reload()
-                    } else
-                        alert('Sorry, an error occurred while submitting this form. Please try again.')
-                }, e => {
-                    console.error(e)
-                    alert('Sorry, an error occurred while submitting this form. Please try again.')
-                }).finally(() => {
-                    submitButton.disabled = false
-                    submitButton.textContent = "Submit"
-                })
-            }
-        }
-    </script>
+    <script src="/static/js/formsubmission.js"></script>
 </head>
 
 <body class="pb-5">
@@ -48,7 +23,7 @@
     </module>
 
     <main class="container mt-5" style="max-width:700px;">
-        <form>
+        <form data-submissionmessage="Thank you, we have received your request. A member of our team will follow up to confirm your order shortly.">
             <input type="hidden" name="form" value="new-process-order">
             <h3>Contact Information</h3>
             <div class="mb-3">

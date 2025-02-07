@@ -16,6 +16,8 @@
     "watch:html": "onchange \"src/html\" -- npm run build:html",
     "watch:config": "onchange \"posthtml.json\" -- npm run build:html",
     "build:config": "mkdir -p dist && cp src/robots.txt src/sitemap.xml dist",
+    "build:js": "mkdir -p dist/static/js; for js in src/js/*.js; do minify \"$js\" > \"dist/static/js/$(basename $js)\"; done",
+    "watch:js": "onchange \"src/js\" -- npm run build:js",
     "watch": "run-p build serve watch:*",
     "build": "run-p build:*",
     "serve": "browser-sync start --server \"dist\" --files \"dist\""
@@ -35,6 +37,7 @@
     "browser-sync": "^3.0.2",
     "htmlnano": "^2.1.1",
     "imagemin-cli": "^8.0.0",
+    "minify": "^13.0.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
     "postcss-cli": "^11.0.0",
