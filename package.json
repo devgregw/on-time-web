@@ -15,6 +15,7 @@
     "build:html": "posthtml -c posthtml.json",
     "watch:html": "onchange \"src/html\" -- npm run build:html",
     "watch:config": "onchange \"posthtml.json\" -- npm run build:html",
+    "build:config": "mkdir -p dist && cp src/robots.txt src/sitemap.xml dist",
     "watch": "run-p build serve watch:*",
     "build": "run-p build:*",
     "serve": "browser-sync start --server \"dist\" --files \"dist\""
