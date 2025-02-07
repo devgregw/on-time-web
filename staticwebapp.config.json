@@ -9,7 +9,7 @@
     ],
     "globalHeaders": {
         "X-Frame-Options": "SAMEORIGIN",
-        "Content-Security-Policy": "default-src 'self' *.google.com *.gstatic.com *.jsdelivr.net *.googleapis.com; child-src *.google.com https://embed.waze.com; object-src 'none'; style-src https: unsafe-inline unsafe-hashes; img-src https: data:",
+        "Content-Security-Policy": "default-src 'self' *.google.com *.gstatic.com *.jsdelivr.net *.googleapis.com; child-src *.google.com *.waze.com; object-src 'none'; style-src https: 'unsafe-inline'; img-src https: data:",
         "Permissions-Policy": "geolocation=(), camera=(), microphone=(), display-capture=()"
     }
 }
