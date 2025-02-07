@@ -1,0 +1,15 @@
+{
+    "routes": [
+        {
+            "route": "/static/*",
+            "headers": {
+                "Cache-Control": "must-revalidate, max-age=86400"
+            }
+        }
+    ],
+    "globalHeaders": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "Content-Security-Policy": "default-src 'self' *.google.com *.gstatic.com *.jsdelivr.net *.googleapis.com; child-src *.google.com https://embed.waze.com; object-src 'none'; style-src https: unsafe-inline unsafe-hashes; img-src https: data:",
+        "Permissions-Policy": "geolocation=(), camera=(), microphone=(), display-capture=()"
+    }
+}
