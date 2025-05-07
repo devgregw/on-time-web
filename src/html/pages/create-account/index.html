@@ -26,7 +26,17 @@
     </module>
 
     <main class="container mt-5" style="max-width:700px;">
-        <form data-submissionmessage="Thank you, we have received your request. A member of our team will follow up to confirm your new account shortly.">
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-exclamation-triangle-fill me-2" viewBox="0 0 16 16">
+                <path
+                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+            </svg>
+            <div>
+                Please email <a href="mailto:orders@ontimecouriers.com">orders@ontimecouriers.com</a> to set up an account.
+            </div>
+        </div>
+        <!-- <form data-submissionmessage="Thank you, we have received your request. A member of our team will follow up to confirm your new account shortly.">
             <input type="hidden" required readonly name="form" value="create-account">
             <h3>Company Information</h3>
             <div class="mb-3">
@@ -205,7 +215,7 @@
             </div>
 
             <button class="my-5 btn btn-lg btn-success rounded-pill g-recaptcha" data-sitekey="6Lfh668qAAAAANPpXJ15F8nr6KG1CbSiPRR6NDYO" data-callback="onSubmit" data-action="submit" id="submit">Submit</button>
-        </form>
+        </form> -->
     </main>
 </body>
 

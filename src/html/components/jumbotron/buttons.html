@@ -16,8 +16,12 @@
             <li>
                 <h6 class="dropdown-header">Select payment method</h6>
             </li>
-            <li><a class="dropdown-item" href="https://secure.ontimecouriers.com/QuickPay.aspx">Card</a>
+            <li>
+                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#cardModal">Card</a>
             </li>
+            <!-- <li>
+                <a class="dropdown-item" href="https://secure.ontimecouriers.com/QuickPay.aspx">Card</a>
+            </li> -->
             <li>
                 <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#paypalModal">PayPal</a>
             </li>
@@ -26,6 +30,7 @@
             </li>
         </ul>
         <small class="text-light">Card, PayPal, &amp; More</small>
+        <module href="/modals/cardModal.html"></module>
         <module href="/modals/paypalModal.html"></module>
         <module href="/modals/zelleModal.html"></module>
     </div>
