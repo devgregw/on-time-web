@@ -9,3 +9,7 @@
 .featurette-image {
     object-fit: cover;
 }
+
+.popover {
+    --bs-popover-max-width: 350px !important;
+}

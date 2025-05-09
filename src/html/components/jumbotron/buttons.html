@@ -7,30 +7,36 @@
         <small class="text-light">214-740-9999</small>
     </div>
     <div class="align-items-center dropdown" style="flex:1 0 50%;">
-        <button class="d-block btn btn-success btn-lg px-4 rounded-pill" style="width:100%" data-bs-toggle="dropdown"
-            aria-expanded="false">
+        <a id="payment-button" class="d-block btn btn-success btn-lg px-4 rounded-pill" tabindex="0" style="width:100%" data-bs-toggle="popover" title="Payment Options" data-bs-placement="bottom">
             <i class="bi me-1 d-none d-sm-inline bi-receipt"></i>
             Pay Invoice
-        </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
-            <li>
-                <h6 class="dropdown-header">Select payment method</h6>
-            </li>
-            <li>
-                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#cardModal">Card</a>
-            </li>
-            <!-- <li>
-                <a class="dropdown-item" href="https://secure.ontimecouriers.com/QuickPay.aspx">Card</a>
-            </li> -->
-            <li>
-                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#paypalModal">PayPal</a>
-            </li>
-            <li>
-                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#zelleModal">Zelle</a>
-            </li>
-        </ul>
+        </a>
+        <div hidden>
+            <div id="payment-popover" style="width:300px">
+                <a href="https://buy.stripe.com/00gg1EdDJ6ft5z29AA" rel="noopener noreferrer" target="_blank" role="button" class="btn btn-outline-dark btn-lg d-block">
+                    <div class="d-flex align-items-center">
+                        <img class="ms-2" height="20" src="/static/img/stripe.svg">
+                        <div class="flex-grow-1">Credit &amp; Debit</div>
+                    </div>
+                </a>
+                <div class="text-secondary mt-2">Other payment options</div>
+                <div class="d-flex gap-2">
+                    <a data-bs-toggle="modal" data-bs-target="#paypalModal" class="btn btn-outline-dark" style="flex:1 1 0px;">
+                        <div class="d-flex align-items-center">
+                            <img class="ms-2" height="20" src="/static/img/paypal.svg">
+                            <div class="flex-grow-1">PayPal</div>
+                        </div>
+                    </a>
+                    <a data-bs-toggle="modal" data-bs-target="#zelleModal" class="btn btn-outline-dark" style="flex:1 1 0px;">
+                        <div class="d-flex align-items-center">
+                            <img class="ms-2" height="20" src="/static/img/zelle.svg">
+                            <div class="flex-grow-1">Zelle</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
         <small class="text-light">Card, PayPal, &amp; More</small>
-        <module href="/modals/cardModal.html"></module>
         <module href="/modals/paypalModal.html"></module>
         <module href="/modals/zelleModal.html"></module>
     </div>
