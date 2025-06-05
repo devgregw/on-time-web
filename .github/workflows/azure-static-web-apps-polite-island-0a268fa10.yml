@@ -34,6 +34,8 @@ jobs:
           app_build_command: "npm run build"
           skip_app_build: false
           ###### End of Repository/Build Configurations ######
+        env:
+          SKIP_DEPLOY_ON_MISSING_SECRETS: ${{ github.event_name == 'pull_request' }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
