@@ -1,5 +1,5 @@
-@import 'variables';
+@use 'variables';
 
 .dallas {
-    background: $jumbotron-gradient, top center / cover no-repeat $jumbotron-image;
+    background: variables.$jumbotron-gradient, top center / cover no-repeat variables.$jumbotron-image;
 }
