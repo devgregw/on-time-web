@@ -1,6 +1,6 @@
-@import 'variables';
-@import 'fonts';
-@import 'forms';
+@use 'variables';
+@use 'fonts';
+@use 'forms';
 
 .featurette-divider {
     margin: 5rem 0;
