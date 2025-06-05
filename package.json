@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": "true",
   "scripts": {
-    "css:lint": "stylelint src/scss/*.scss  å--custom-syntax postcss-scss",
+    "css:lint": "stylelint src/scss/*.scss  --custom-syntax postcss-scss",
     "css:scss": "sass -s compressed src/scss:dist/static/css",
     "css:autoprefixer": "postcss -u autoprefixer -r dist/static/css/*.css",
     "build:css": "npm run css:lint && npm run css:scss && npm run css:autoprefixer",
