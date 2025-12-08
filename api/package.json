@@ -13,15 +13,15 @@
   "dependencies": {
     "@azure/functions": "^4.0.0",
     "@google-cloud/recaptcha-enterprise": "^5.13.0",
-    "nodemailer": "^6.9.11",
+    "nodemailer": "^7.0.11",
     "sanitize-html": "^2.12.1"
   },
   "devDependencies": {
     "@types/node": "^18.x",
-    "@types/nodemailer": "^6.4.14",
+    "@types/nodemailer": "^7.0.4",
     "@types/sanitize-html": "^2.11.0",
     "rimraf": "^5.0.0",
-    "typescript": "^4.0.0"
+    "typescript": "^5.0.0"
   },
   "main": "dist/src/functions/*.js"
 }
